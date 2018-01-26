@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  HYCustomDemo
+//
+//  Created by HY on 2017/7/31.
+//  Copyright © 2017年 apple. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "HYDataService.h"
+#import "Tools.h"
+#import <SDAutoLayout.h>
+#import <MJExtension/MJExtension.h>
+#import <UIImageView+WebCache.h>
+#import <MJRefresh/MJRefresh.h>
+#import <LCProgressHUD.h>
+#import <WHKit.h>
+
+#define Main_Screen_Width [UIScreen mainScreen].bounds.size.width
+#define Main_Screen_Height [UIScreen mainScreen].bounds.size.height
+
+
+//实时热点
+//NSString *url = @"https://route.showapi.com/849-1?num=10&showapi_appid=43039&showapi_test_draft=false&showapi_timestamp=20170731230802&showapi_sign=587ee3b043534ddf973ccd5bd5964ced";
+//热搜榜
+//NSString *url2 = @"https://route.showapi.com/738-1?n=10&showapi_appid=43039&showapi_test_draft=false&showapi_timestamp=20170731221912&showapi_sign=587ee3b043534ddf973ccd5bd5964ced";
+
+#define BaseUrl @"https://route.showapi.com/"
+//新闻资讯
+#define NewsUrl @"109-35?channelId=&channelName=&id=&maxResult=20&needAllList=0&needContent=0&needHtml=0&showapi_test_draft=false&showapi_appid=43039&showapi_sign=587ee3b043534ddf973ccd5bd5964ced&showapi_timestamp=&page="
+
+
+#endif /* PrefixHeader_pch */

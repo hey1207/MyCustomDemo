@@ -1,0 +1,16 @@
+platform:ios,'9.0'
+target “HYCustomDemo” do
+
+pod 'AFNetworking'
+pod 'SDAutoLayout'
+pod 'SDWebImage'
+pod 'MJRefresh'
+pod 'LCProgressHUD'
+pod 'MJExtension'
+pod 'LXScrollContentView'
+pod 'FMDB'
+pod 'WHKit'
+pod 'HyphenateLite'
+pod 'Hyphenate'
+
+end

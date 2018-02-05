@@ -7,17 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041A476420240B2400FB0EE7 /* LZCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A474D20240B2300FB0EE7 /* LZCityPickerView.m */; };
+		041A476520240B2400FB0EE7 /* LZPickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A474E20240B2300FB0EE7 /* LZPickerModel.m */; };
+		041A476620240B2400FB0EE7 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041A475020240B2300FB0EE7 /* Address.plist */; };
+		041A476720240B2400FB0EE7 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041A475320240B2300FB0EE7 /* city.plist */; };
+		041A476820240B2400FB0EE7 /* LZCityPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A475420240B2300FB0EE7 /* LZCityPickerController.m */; };
+		041A476920240B2400FB0EE7 /* HospitalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A475620240B2300FB0EE7 /* HospitalViewController.m */; };
+		041A476A20240B2400FB0EE7 /* HospitalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041A475820240B2300FB0EE7 /* HospitalCell.xib */; };
+		041A476B20240B2400FB0EE7 /* HospitalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A475920240B2300FB0EE7 /* HospitalCell.m */; };
+		041A476C20240B2400FB0EE7 /* hospital.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041A475A20240B2300FB0EE7 /* hospital.plist */; };
+		041A476D20240B2400FB0EE7 /* HosDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041A475E20240B2300FB0EE7 /* HosDetailCell.xib */; };
+		041A476E20240B2400FB0EE7 /* HosDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A475F20240B2300FB0EE7 /* HosDetailViewController.m */; };
+		041A476F20240B2400FB0EE7 /* HYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A476020240B2300FB0EE7 /* HYWebViewController.m */; };
+		041A477020240B2400FB0EE7 /* HosDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A476120240B2300FB0EE7 /* HosDetailCell.m */; };
+		041A477420240B5200FB0EE7 /* HYNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A477320240B5200FB0EE7 /* HYNetWorking.m */; };
 		04206ADD1F31B13500DF8762 /* HYWKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04206ADC1F31B13500DF8762 /* HYWKViewController.m */; };
 		04405E821F4D635200217D16 /* PhotosContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04405E811F4D635200217D16 /* PhotosContainerView.m */; };
 		04405E861F4E64D200217D16 /* HYDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04405E851F4E64D200217D16 /* HYDataBase.m */; };
 		0446CB2C1F2CD37900B781CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446CB2B1F2CD37900B781CF /* main.m */; };
-		0446CB2F1F2CD37900B781CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446CB2E1F2CD37900B781CF /* AppDelegate.m */; };
-		0446CB321F2CD37900B781CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446CB311F2CD37900B781CF /* ViewController.m */; };
 		0446CB351F2CD37900B781CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0446CB331F2CD37900B781CF /* Main.storyboard */; };
 		0446CB371F2CD37900B781CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0446CB361F2CD37900B781CF /* Assets.xcassets */; };
 		0446CB3A1F2CD37900B781CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0446CB381F2CD37900B781CF /* LaunchScreen.storyboard */; };
 		0446CB451F2CD37900B781CF /* HYCustomDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446CB441F2CD37900B781CF /* HYCustomDemoTests.m */; };
 		0446CB501F2CD37900B781CF /* HYCustomDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446CB4F1F2CD37900B781CF /* HYCustomDemoUITests.m */; };
+		045C4A72201B317D0010788C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C4A70201B317C0010788C /* ViewController.m */; };
+		045C4A73201B317D0010788C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C4A71201B317D0010788C /* AppDelegate.m */; };
 		049F35B61FA322F600C4F1D7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F35B51FA322F600C4F1D7 /* MainViewController.m */; };
 		04A43ED71F302372000DBC7F /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43ED61F302372000DBC7F /* Tools.m */; };
 		04A43EE21F306DA7000DBC7F /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43EDD1F306DA7000DBC7F /* BaseViewController.m */; };
@@ -48,6 +62,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041A474D20240B2300FB0EE7 /* LZCityPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCityPickerView.m; sourceTree = "<group>"; };
+		041A474E20240B2300FB0EE7 /* LZPickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPickerModel.m; sourceTree = "<group>"; };
+		041A474F20240B2300FB0EE7 /* LZCityPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCityPickerController.h; sourceTree = "<group>"; };
+		041A475020240B2300FB0EE7 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
+		041A475120240B2300FB0EE7 /* LZPickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPickerModel.h; sourceTree = "<group>"; };
+		041A475220240B2300FB0EE7 /* LZCityPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCityPickerView.h; sourceTree = "<group>"; };
+		041A475320240B2300FB0EE7 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
+		041A475420240B2300FB0EE7 /* LZCityPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCityPickerController.m; sourceTree = "<group>"; };
+		041A475620240B2300FB0EE7 /* HospitalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalViewController.m; sourceTree = "<group>"; };
+		041A475720240B2300FB0EE7 /* HospitalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalCell.h; sourceTree = "<group>"; };
+		041A475820240B2300FB0EE7 /* HospitalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HospitalCell.xib; sourceTree = "<group>"; };
+		041A475920240B2300FB0EE7 /* HospitalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalCell.m; sourceTree = "<group>"; };
+		041A475A20240B2300FB0EE7 /* hospital.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hospital.plist; sourceTree = "<group>"; };
+		041A475B20240B2300FB0EE7 /* HospitalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalViewController.h; sourceTree = "<group>"; };
+		041A475D20240B2300FB0EE7 /* HosDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HosDetailCell.h; sourceTree = "<group>"; };
+		041A475E20240B2300FB0EE7 /* HosDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HosDetailCell.xib; sourceTree = "<group>"; };
+		041A475F20240B2300FB0EE7 /* HosDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HosDetailViewController.m; sourceTree = "<group>"; };
+		041A476020240B2300FB0EE7 /* HYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYWebViewController.m; sourceTree = "<group>"; };
+		041A476120240B2300FB0EE7 /* HosDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HosDetailCell.m; sourceTree = "<group>"; };
+		041A476220240B2300FB0EE7 /* HosDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HosDetailViewController.h; sourceTree = "<group>"; };
+		041A476320240B2300FB0EE7 /* HYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYWebViewController.h; sourceTree = "<group>"; };
+		041A477220240B5200FB0EE7 /* HYNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNetWorking.h; sourceTree = "<group>"; };
+		041A477320240B5200FB0EE7 /* HYNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetWorking.m; sourceTree = "<group>"; };
 		04206ADB1F31B13500DF8762 /* HYWKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYWKViewController.h; sourceTree = "<group>"; };
 		04206ADC1F31B13500DF8762 /* HYWKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYWKViewController.m; sourceTree = "<group>"; };
 		04405E801F4D635200217D16 /* PhotosContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosContainerView.h; sourceTree = "<group>"; };
@@ -56,10 +93,6 @@
 		04405E851F4E64D200217D16 /* HYDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDataBase.m; sourceTree = "<group>"; };
 		0446CB271F2CD37900B781CF /* HYCustomDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYCustomDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0446CB2B1F2CD37900B781CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0446CB2D1F2CD37900B781CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
-		0446CB2E1F2CD37900B781CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
-		0446CB301F2CD37900B781CF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
-		0446CB311F2CD37900B781CF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		0446CB341F2CD37900B781CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0446CB361F2CD37900B781CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0446CB391F2CD37900B781CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +104,10 @@
 		0446CB4F1F2CD37900B781CF /* HYCustomDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYCustomDemoUITests.m; sourceTree = "<group>"; };
 		0446CB511F2CD37900B781CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0459B924103878DEF2604370 /* Pods-HYCustomDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCustomDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYCustomDemo/Pods-HYCustomDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		045C4A6E201B317C0010788C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		045C4A6F201B317C0010788C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		045C4A70201B317C0010788C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		045C4A71201B317D0010788C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		049F35B41FA322F600C4F1D7 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		049F35B51FA322F600C4F1D7 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		04A43ED51F302372000DBC7F /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
@@ -120,6 +157,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041A474C20240B2300FB0EE7 /* LZCityPickerClass */ = {
+			isa = PBXGroup;
+			children = (
+				041A474D20240B2300FB0EE7 /* LZCityPickerView.m */,
+				041A474E20240B2300FB0EE7 /* LZPickerModel.m */,
+				041A474F20240B2300FB0EE7 /* LZCityPickerController.h */,
+				041A475020240B2300FB0EE7 /* Address.plist */,
+				041A475120240B2300FB0EE7 /* LZPickerModel.h */,
+				041A475220240B2300FB0EE7 /* LZCityPickerView.h */,
+				041A475320240B2300FB0EE7 /* city.plist */,
+				041A475420240B2300FB0EE7 /* LZCityPickerController.m */,
+			);
+			path = LZCityPickerClass;
+			sourceTree = "<group>";
+		};
+		041A477120240B5200FB0EE7 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				041A477220240B5200FB0EE7 /* HYNetWorking.h */,
+				041A477320240B5200FB0EE7 /* HYNetWorking.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		041A477520240EDD00FB0EE7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				041A475B20240B2300FB0EE7 /* HospitalViewController.h */,
+				041A475620240B2300FB0EE7 /* HospitalViewController.m */,
+				041A476220240B2300FB0EE7 /* HosDetailViewController.h */,
+				041A475F20240B2300FB0EE7 /* HosDetailViewController.m */,
+				041A476020240B2300FB0EE7 /* HYWebViewController.m */,
+				041A476320240B2300FB0EE7 /* HYWebViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		041A477620240EE700FB0EE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				041A475720240B2300FB0EE7 /* HospitalCell.h */,
+				041A475920240B2300FB0EE7 /* HospitalCell.m */,
+				041A475820240B2300FB0EE7 /* HospitalCell.xib */,
+				041A475D20240B2300FB0EE7 /* HosDetailCell.h */,
+				041A476120240B2300FB0EE7 /* HosDetailCell.m */,
+				041A475E20240B2300FB0EE7 /* HosDetailCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		041A477720240F3A00FB0EE7 /* CityPicker */ = {
+			isa = PBXGroup;
+			children = (
+				041A474C20240B2300FB0EE7 /* LZCityPickerClass */,
+			);
+			path = CityPicker;
+			sourceTree = "<group>";
+		};
 		04206ADA1F31B12200DF8762 /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +267,6 @@
 		0446CB291F2CD37900B781CF /* HYCustomDemo */ = {
 			isa = PBXGroup;
 			children = (
-				04C473A71F2CE3FB005AB420 /* Custom */,
 				04C473A61F2CE3D4005AB420 /* Class */,
 				04C4739E1F2CE392005AB420 /* Main */,
 				04C4739F1F2CE392005AB420 /* Support */,
@@ -221,11 +315,14 @@
 			path = News;
 			sourceTree = "<group>";
 		};
-		049F35B31FA322BB00C4F1D7 /* Chart */ = {
+		049F35B31FA322BB00C4F1D7 /* Hospital */ = {
 			isa = PBXGroup;
 			children = (
+				041A475A20240B2300FB0EE7 /* hospital.plist */,
+				041A477620240EE700FB0EE7 /* View */,
+				041A477520240EDD00FB0EE7 /* Controller */,
 			);
-			path = Chart;
+			path = Hospital;
 			sourceTree = "<group>";
 		};
 		04A43EDB1F306DA7000DBC7F /* Controller */ = {
@@ -262,10 +359,10 @@
 		04C4739E1F2CE392005AB420 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				0446CB2D1F2CD37900B781CF /* AppDelegate.h */,
-				0446CB2E1F2CD37900B781CF /* AppDelegate.m */,
-				0446CB301F2CD37900B781CF /* ViewController.h */,
-				0446CB311F2CD37900B781CF /* ViewController.m */,
+				045C4A6F201B317C0010788C /* AppDelegate.h */,
+				045C4A71201B317D0010788C /* AppDelegate.m */,
+				045C4A6E201B317C0010788C /* ViewController.h */,
+				045C4A70201B317C0010788C /* ViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -273,6 +370,7 @@
 		04C4739F1F2CE392005AB420 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				041A477720240F3A00FB0EE7 /* CityPicker */,
 				04405E831F4E649E00217D16 /* FMDB */,
 				04405E7F1F4D634600217D16 /* CommonView */,
 				04206ADA1F31B12200DF8762 /* WKWebView */,
@@ -298,6 +396,7 @@
 		04C473A11F2CE392005AB420 /* DataService */ = {
 			isa = PBXGroup;
 			children = (
+				041A477120240B5200FB0EE7 /* NetWork */,
 				04C473A81F2CE48B005AB420 /* HYDataService.h */,
 				04C473A91F2CE48B005AB420 /* HYDataService.m */,
 			);
@@ -341,17 +440,10 @@
 			children = (
 				049F35B41FA322F600C4F1D7 /* MainViewController.h */,
 				049F35B51FA322F600C4F1D7 /* MainViewController.m */,
-				049F35B31FA322BB00C4F1D7 /* Chart */,
+				049F35B31FA322BB00C4F1D7 /* Hospital */,
 				049F35B21FA322A700C4F1D7 /* News */,
 			);
 			path = Class;
-			sourceTree = "<group>";
-		};
-		04C473A71F2CE3FB005AB420 /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Custom;
 			sourceTree = "<group>";
 		};
 		2A685DC61082AFC22D93597F /* Pods */ = {
@@ -483,8 +575,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0446CB3A1F2CD37900B781CF /* LaunchScreen.storyboard in Resources */,
+				041A476C20240B2400FB0EE7 /* hospital.plist in Resources */,
+				041A476620240B2400FB0EE7 /* Address.plist in Resources */,
+				041A476720240B2400FB0EE7 /* city.plist in Resources */,
 				0446CB371F2CD37900B781CF /* Assets.xcassets in Resources */,
 				0446CB351F2CD37900B781CF /* Main.storyboard in Resources */,
+				041A476A20240B2400FB0EE7 /* HospitalCell.xib in Resources */,
+				041A476D20240B2400FB0EE7 /* HosDetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,20 +666,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0446CB321F2CD37900B781CF /* ViewController.m in Sources */,
 				04405E861F4E64D200217D16 /* HYDataBase.m in Sources */,
 				04A43EE21F306DA7000DBC7F /* BaseViewController.m in Sources */,
-				0446CB2F1F2CD37900B781CF /* AppDelegate.m in Sources */,
 				04A43ED71F302372000DBC7F /* Tools.m in Sources */,
 				04FD8F951FE2654C00963B78 /* UITableViewCell+CellAnimation.m in Sources */,
 				04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */,
+				041A476420240B2400FB0EE7 /* LZCityPickerView.m in Sources */,
+				041A477020240B2400FB0EE7 /* HosDetailCell.m in Sources */,
 				04206ADD1F31B13500DF8762 /* HYWKViewController.m in Sources */,
 				04C473AA1F2CE48B005AB420 /* HYDataService.m in Sources */,
 				0446CB2C1F2CD37900B781CF /* main.m in Sources */,
+				045C4A72201B317D0010788C /* ViewController.m in Sources */,
+				041A476F20240B2400FB0EE7 /* HYWebViewController.m in Sources */,
 				04A43EF21F307EE5000DBC7F /* NewsViewController.m in Sources */,
 				04A43EEC1F307AC0000DBC7F /* NewsCell.m in Sources */,
+				041A476520240B2400FB0EE7 /* LZPickerModel.m in Sources */,
+				041A476B20240B2400FB0EE7 /* HospitalCell.m in Sources */,
+				041A476E20240B2400FB0EE7 /* HosDetailViewController.m in Sources */,
 				049F35B61FA322F600C4F1D7 /* MainViewController.m in Sources */,
+				041A477420240B5200FB0EE7 /* HYNetWorking.m in Sources */,
+				041A476820240B2400FB0EE7 /* LZCityPickerController.m in Sources */,
+				045C4A73201B317D0010788C /* AppDelegate.m in Sources */,
 				04A43EEF1F307BC8000DBC7F /* NewsTableView.m in Sources */,
+				041A476920240B2400FB0EE7 /* HospitalViewController.m in Sources */,
 				04405E821F4D635200217D16 /* PhotosContainerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -746,7 +852,7 @@
 				DEVELOPMENT_TEAM = 5PQN62M948;
 				GCC_PREFIX_HEADER = HYCustomDemo/Support/PCH/PrefixHeader.pch;
 				INFOPLIST_FILE = HYCustomDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hey136.HYCustomDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -761,7 +867,7 @@
 				DEVELOPMENT_TEAM = 5PQN62M948;
 				GCC_PREFIX_HEADER = HYCustomDemo/Support/PCH/PrefixHeader.pch;
 				INFOPLIST_FILE = HYCustomDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hey136.HYCustomDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -17,6 +17,7 @@
 #import <MJRefresh/MJRefresh.h>
 #import <LCProgressHUD.h>
 #import <WHKit.h>
+#import "HYNetWorking.h"
 
 #define Main_Screen_Width [UIScreen mainScreen].bounds.size.width
 #define Main_Screen_Height [UIScreen mainScreen].bounds.size.height
@@ -31,5 +32,8 @@
 //新闻资讯
 #define NewsUrl @"109-35?channelId=&channelName=&id=&maxResult=20&needAllList=0&needContent=0&needHtml=0&showapi_test_draft=false&showapi_appid=43039&showapi_sign=587ee3b043534ddf973ccd5bd5964ced&showapi_timestamp=&page="
 
+//医院
+#define Search_Url @"http://route.showapi.com/87-60"
+#define HosDetail_Url @"http://route.showapi.com/87-59"
 
 #endif /* PrefixHeader_pch */

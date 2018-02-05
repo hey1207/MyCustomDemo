@@ -87,6 +87,17 @@
         NSDictionary *dic = [response[@"showapi_res_body"] objectForKey:@"pagebean"];
         NewsModel *newsModel = [NewsModel mj_objectWithKeyValues:dic];
         
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *plistPath1= [paths objectAtIndex:0];
+        NSLog(@"------%@",plistPath1);
+        //得到完整的路径名
+        NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"award_1.plist"];
+        NSFileManager *fm = [NSFileManager defaultManager];
+        if ([fm createFileAtPath:fileName contents:nil attributes:nil] ==YES) {
+//            [data[@"item"] writeToFile:fileName atomically:YES];
+            NSLog(@"-----------文件写入完成");
+        }
+        
         //存入数据库
         for (Contentlist *contentList in newsModel.contentlist) {
             contentList.channelTitle = self.titleStr;

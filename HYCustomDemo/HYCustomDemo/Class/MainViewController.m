@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "BaseViewController.h"
+#import "HospitalViewController.h"
 
 @interface MainViewController ()
 
@@ -36,17 +37,8 @@
 }
 
 -(void)chartButtonAction:(UIButton *)button{
-    //是否安装QQ
-    if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"mqq://"]])
-    {
-        //用来接收临时消息的客服QQ号码(注意此QQ号需开通QQ推广功能,否则陌生人向他发送消息会失败)
-        NSString *QQ = @"791590798";
-        //调用QQ客户端,发起QQ临时会话
-        NSString *url = [NSString stringWithFormat:@"mqq://im/chat?chat_type=wpa&uin=%@&version=1&src_type=web",QQ];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-    }else{
-        [LCProgressHUD showInfoMsg:@"未安装QQ"];
-    }
+    HospitalViewController *hospitalVC = [[HospitalViewController alloc] init];
+    [self.navigationController pushViewController:hospitalVC animated:YES];
 }
 
 -(UIButton *)createButton:(NSString *)title{

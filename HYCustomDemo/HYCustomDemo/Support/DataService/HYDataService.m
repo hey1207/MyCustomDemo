@@ -7,6 +7,7 @@
 //
 
 #import "HYDataService.h"
+#import "HYGetParameter.h"
 
 @implementation HYDataService
 
@@ -38,7 +39,8 @@
     }
     //post方式
     if (method == REQUEST_METHOD_POST) {
-        [self POST:urlString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSDictionary *paraDic = [HYGetParameter getParameter:parameters];
+        [self POST:urlString parameters:paraDic progress:^(NSProgress * _Nonnull uploadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             if (responseObject) {

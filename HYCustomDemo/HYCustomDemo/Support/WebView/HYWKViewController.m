@@ -65,7 +65,7 @@
         
         _myWKWebView.sd_layout
         .leftSpaceToView(self.view, 0)
-        .topSpaceToView(self.view, 20)
+        .topSpaceToView(self.view, 0)
         .rightSpaceToView(self.view, 0)
         .bottomSpaceToView(self.view, 0);
 
@@ -92,7 +92,7 @@
 }
 - (UIProgressView *)progressView{
     if(!_progressView){
-        _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0,21,Main_Screen_Width, 0)];
+        _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0,1,Main_Screen_Width, 0)];
         _progressView.tintColor = [UIColor orangeColor];
         _progressView.trackTintColor = [UIColor whiteColor];
         [self.view addSubview:_progressView];

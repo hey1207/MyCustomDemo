@@ -9,8 +9,6 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#import "HYDataService.h"
-#import "Tools.h"
 #import <SDAutoLayout.h>
 #import <MJExtension/MJExtension.h>
 #import <UIImageView+WebCache.h>
@@ -18,26 +16,43 @@
 #import <LCProgressHUD.h>
 #import <WHKit.h>
 
-#import "RootViewController.h"
+#import "Tools.h"
+//FMDB
+#import "HYDataBase.h"
+//原生网络请求
 #import "HYNetWorking.h"
-#import "HYWKViewController.h"
+//AFN网络请求
+#import "HYDataService.h"
 
+#import "RootViewController.h"
+//webView
+#import "HYWKViewController.h"
 
 #define Main_Screen_Width [UIScreen mainScreen].bounds.size.width
 #define Main_Screen_Height [UIScreen mainScreen].bounds.size.height
 
+//导航栏title
+#define NavTitleH(T_E_X_T)   UILabel * titleLable=[[UILabel alloc]init];titleLable.text=(T_E_X_T);titleLable.backgroundColor=[UIColor clearColor];titleLable.frame=CGRectMake(0, 0, 30, 30);titleLable.font=[UIFont fontWithName:@"PingFangSC-Regular" size:18];titleLable.textColor=[UIColor blackColor];self.navigationItem.titleView=titleLable;
 
-//实时热点
-//NSString *url = @"https://route.showapi.com/849-1?num=10&showapi_appid=43039&showapi_test_draft=false&showapi_timestamp=20170731230802&showapi_sign=587ee3b043534ddf973ccd5bd5964ced";
-//热搜榜
-//NSString *url2 = @"https://route.showapi.com/738-1?n=10&showapi_appid=43039&showapi_test_draft=false&showapi_timestamp=20170731221912&showapi_sign=587ee3b043534ddf973ccd5bd5964ced";
 
-#define BaseUrl @"https://route.showapi.com/"
-//新闻资讯
-#define NewsUrl @"109-35?channelId=&channelName=&id=&maxResult=20&needAllList=0&needContent=0&needHtml=0&showapi_test_draft=false&showapi_appid=43039&showapi_sign=587ee3b043534ddf973ccd5bd5964ced&showapi_timestamp=&page="
+//新闻API接口
+#define News_Base_Url @"http://route.showapi.com/109-35"
 
 //医院
-#define Search_Url @"http://route.showapi.com/87-60"
-#define HosDetail_Url @"http://route.showapi.com/87-59"
+#define Hospital_Search_Url @"http://route.showapi.com/87-60"
+#define Hospital_Detail_Url @"http://route.showapi.com/87-59"
+
+//景点大全  https://www.showapi.com/api/view/268/4
+#define Scenery_Search_Url @"http://route.showapi.com/268-1"
+#define Scenery_Province_Url @"http://route.showapi.com/268-2" //省
+#define Scenery_City_Url @"http://route.showapi.com/268-3" //市
+#define Scenery_Area_Url @"http://route.showapi.com/268-4" //区
+
 
 #endif /* PrefixHeader_pch */
+
+
+
+
+
+

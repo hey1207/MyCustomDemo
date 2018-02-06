@@ -25,7 +25,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.title = @"新闻";
+    NavTitleH(@"实时新闻")
+    
     //不加titleView位置会动
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -93,7 +94,7 @@
 }
 -(NSArray *)titleArray{
     if (!_titleArray) {
-        _titleArray = @[@"热点",@"财经",@"郑州",@"体育",@"篮球",@"汽车",@"房产",@"股票",@"足球",@"图片"];
+        _titleArray = @[@"热点",@"科技",@"体育",@"财经",@"汽车",@"房产"];
     }
     return _titleArray;
 }

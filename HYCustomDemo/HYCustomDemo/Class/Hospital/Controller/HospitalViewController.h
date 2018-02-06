@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HospitalViewController : UIViewController
+@interface HospitalViewController : RootViewController
 
 @end

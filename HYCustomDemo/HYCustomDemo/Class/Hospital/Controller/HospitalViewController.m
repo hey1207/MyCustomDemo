@@ -133,7 +133,7 @@
 }
 -(UITableView *)mainTableView{
     if (!_mainTableView) {
-        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, Main_Screen_Width, Main_Screen_Height-64) style:UITableViewStylePlain];
+        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height-64) style:UITableViewStylePlain];
         _mainTableView.backgroundColor = [UIColor whiteColor];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;

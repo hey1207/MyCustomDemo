@@ -1,123 +1,101 @@
 //
-//  NewsViewController.m
+//  BaseViewController.m
 //  HYCustomDemo
 //
-//  Created by HY on 2017/8/1.
+//  Created by HY on 2017/7/31.
 //  Copyright © 2017年 apple. All rights reserved.
 //
 
 #import "NewsViewController.h"
-#import "HYWKViewController.h"
-#import "HYDataBase.h"
+#import <LXSegmentTitleView.h>
+#import <LXScrollContentView.h>
+#import "NewsPageViewController.h"
+#import "NewsModel.h"
 
-@interface NewsViewController ()
-@property (nonatomic,strong) NSMutableArray *dataArray;
-@property (nonatomic,assign) NSInteger currentPage;
+@interface NewsViewController ()<LXSegmentTitleViewDelegate,LXScrollContentViewDelegate>
+@property (nonatomic,strong) LXSegmentTitleView *titleView;
+@property (nonatomic,strong) LXScrollContentView *contentView;
+@property (nonatomic,strong) NSArray *titleArray;
+@property (nonatomic,strong) NSMutableArray *vcs;
 @end
 
 @implementation NewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.title = @"新闻";
-    _currentPage = 1;
+    //不加titleView位置会动
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
-    //查询数据
-    [self queryDataWithTitle:self.title];
+    [self.view addSubview:self.titleView];
+    [self.view addSubview:self.contentView];
     
-    [self newsTableView];
+    [self createViewControllers];
+    
+    self.titleView.sd_layout
+    .leftSpaceToView(self.view, 0)
+    .topSpaceToView(self.view, 0)
+    .rightSpaceToView(self.view, 0)
+    .heightIs(35);
+    
+    self.contentView.sd_layout
+    .leftSpaceToView(self.view, 0)
+    .rightSpaceToView(self.view, 0)
+    .topSpaceToView(self.titleView, 0)
+    .bottomSpaceToView(self.view, 0);
 }
--(NewsTableView *)newsTableView{
-    if (!_newsTableView) {
-        _newsTableView = [[NewsTableView alloc] init];
-        [self.view addSubview:_newsTableView];
-        _newsTableView.dataArray = self.dataArray;
-        
-        __weak typeof(self) weakSelf = self;
 
-        //下拉刷新
-        _newsTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            [weakSelf loadDataWithPage:1];
-        }];
-        //上拉加载
-        _newsTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-            _currentPage++;
-            [weakSelf loadDataWithPage:_currentPage];
-        }];
-        
-        _newsTableView.selectCell = ^(NSString *urlStr) {
-            HYWKViewController *myWKWebView = [[HYWKViewController alloc] init];
-            [weakSelf.navigationController pushViewController:myWKWebView animated:YES];
-            [myWKWebView loadRequestWithUrlString:urlStr methodStyle:METHOD_STYLE_UIWebView];
-        };
-        
-        self.newsTableView.sd_layout
-        .leftSpaceToView(self.view, 0)
-        .topSpaceToView(self.view, 0)
-        .rightSpaceToView(self.view, 0)
-        .bottomSpaceToView(self.view, 0);
+-(void)createViewControllers{
+    for (int i = 0; i<self.titleArray.count; i++) {
+        NewsPageViewController *newsVC = [[NewsPageViewController alloc] init];
+        newsVC.titleStr = self.titleArray[i];
+        [self.vcs addObject:newsVC];
     }
-    return _newsTableView;
+    [self.contentView reloadViewWithChildVcs:self.vcs parentVC:self];
+    self.contentView.currentIndex = 0;
 }
--(void)setTitleStr:(NSString *)titleStr{
-    _titleStr = titleStr;
+#pragma mark --------LXSegmentTitleViewDelegate---------
+-(void)segmentTitleView:(LXSegmentTitleView *)segmentView selectedIndex:(NSInteger)selectedIndex lastSelectedIndex:(NSInteger)lastSelectedIndex{
+    self.contentView.currentIndex = selectedIndex;
 }
-//查询数据
--(void)queryDataWithTitle:(NSString *)title{
-    NSArray *localDataArray = [[HYDataBase sharedHYDataBase] getAllContentlistWithChannelTitle:self.titleStr];
-    if (localDataArray.count > 0) {
-        [self.dataArray removeAllObjects];
-        [self.dataArray addObjectsFromArray:localDataArray];
-        [self.newsTableView reloadData];
-    }else{
-        [self loadDataWithPage:self.currentPage];
-    }
-}
-//请求数据
--(void)loadDataWithPage:(NSInteger)page{
-    NSString *url = [NSString stringWithFormat:@"%@%@%ld&title=%@",BaseUrl,NewsUrl,(long)page,self.titleStr];
+#pragma mark --------LXScrollContentViewDelegate---------
+-(void)contentViewDidScroll:(LXScrollContentView *)contentView fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex progress:(float)progress{
     
-    [LCProgressHUD showLoading:@""];
-
-    
-    [[HYDataService sharedClient] requestWithUrlString:[Tools chineseEncodingWithUrl:url] parameters:nil method:REQUEST_METHOD_GET success:^(id response, NSError *error, NSDictionary *dict) {
-        [LCProgressHUD hide];
-        
-        NSDictionary *dic = [response[@"showapi_res_body"] objectForKey:@"pagebean"];
-        NewsModel *newsModel = [NewsModel mj_objectWithKeyValues:dic];
-        
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *plistPath1= [paths objectAtIndex:0];
-        NSLog(@"------%@",plistPath1);
-        //得到完整的路径名
-        NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"award_1.plist"];
-        NSFileManager *fm = [NSFileManager defaultManager];
-        if ([fm createFileAtPath:fileName contents:nil attributes:nil] ==YES) {
-//            [data[@"item"] writeToFile:fileName atomically:YES];
-            NSLog(@"-----------文件写入完成");
-        }
-        
-        //存入数据库
-        for (Contentlist *contentList in newsModel.contentlist) {
-            contentList.channelTitle = self.titleStr;
-            [[HYDataBase sharedHYDataBase] addContentlist:contentList];
-        }
-        [self.dataArray removeAllObjects];
-        [self.dataArray addObjectsFromArray:newsModel.contentlist];
-        [self.newsTableView reloadData];
-        
-        [self.newsTableView.mj_header endRefreshing];
-    } failure:^(id response, NSError *error) {
-        [LCProgressHUD hide];
-        [self.newsTableView.mj_header endRefreshing];
-    }];
 }
--(NSMutableArray *)dataArray{
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray array];
+-(void)contentViewDidEndDecelerating:(LXScrollContentView *)contentView startIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex{
+    self.titleView.selectedIndex = endIndex;
+}
+#pragma mark --------懒加载---------
+-(LXSegmentTitleView *)titleView{
+    if (!_titleView) {
+        _titleView = [[LXSegmentTitleView alloc] initWithFrame:CGRectZero];
+        _titleView.delegate = self;
+        _titleView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+        _titleView.titleFont = [UIFont systemFontOfSize:18];
+        _titleView.segmentTitles = self.titleArray;
     }
-    return _dataArray;
+    return _titleView;
+}
+-(LXScrollContentView *)contentView{
+    if (!_contentView) {
+        _contentView = [[LXScrollContentView alloc] initWithFrame:self.view.frame];
+        _contentView.delegate = self;
+    }
+    return _contentView;
+}
+-(NSMutableArray *)vcs{
+    if (!_vcs) {
+        _vcs = [NSMutableArray array];
+    }
+    return _vcs;
+}
+-(NSArray *)titleArray{
+    if (!_titleArray) {
+        _titleArray = @[@"热点",@"财经",@"郑州",@"体育",@"篮球",@"汽车",@"房产",@"股票",@"足球",@"图片"];
+    }
+    return _titleArray;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -125,13 +103,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
+

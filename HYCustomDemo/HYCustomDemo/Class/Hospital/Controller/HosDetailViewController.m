@@ -8,7 +8,6 @@
 
 #import "HosDetailViewController.h"
 #import "HosDetailCell.h"
-#import "HYWebViewController.h"
 
 @interface HosDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *mainTableView;
@@ -68,9 +67,9 @@
     cell.infoDic = self.infoDic;
     __weak typeof(self) weakSelf = self;
     cell.clickWebsiteBlock = ^(NSString *urlStr) {
-        HYWebViewController *webVC = [[HYWebViewController alloc] init];
-        webVC.urlStr = urlStr;
-        [weakSelf.navigationController pushViewController:webVC animated:YES];
+        HYWKViewController *myWKWebView = [[HYWKViewController alloc] init];
+        [weakSelf.navigationController pushViewController:myWKWebView animated:YES];
+        [myWKWebView loadRequestWithUrlString:urlStr methodStyle:METHOD_STYLE_UIWebView];
     };
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HosDetailViewController : UIViewController
+@interface HosDetailViewController : RootViewController
 @property (nonatomic,strong) NSString *hosID;
 @end

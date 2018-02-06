@@ -1,13 +1,13 @@
 //
-//  NewsViewController.h
+//  RootViewController.h
 //  HYCustomDemo
 //
 //  Created by HY on 2018/2/6.
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface NewsViewController : RootViewController
+@interface RootViewController : UIViewController
 
 @end

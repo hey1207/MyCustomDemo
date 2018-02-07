@@ -7,7 +7,6 @@
 //
 
 #import "NewsPageViewController.h"
-#import "HYDataBase.h"
 
 @interface NewsPageViewController ()
 @property (nonatomic,strong) NSMutableArray *dataArray;
@@ -19,7 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.title = @"新闻";
+    NavTitleH(@"新闻");
+    
     _currentPage = 1;
     
     //查询数据
@@ -48,7 +48,7 @@
         _newsTableView.selectCell = ^(NSString *urlStr) {
             HYWKViewController *myWKWebView = [[HYWKViewController alloc] init];
             [weakSelf.navigationController pushViewController:myWKWebView animated:YES];
-            [myWKWebView loadRequestWithUrlString:urlStr methodStyle:METHOD_STYLE_UIWebView];
+            [myWKWebView loadRequestWithUrlString:urlStr methodStyle:METHOD_STYLE_WKWebView];
         };
         
         self.newsTableView.sd_layout
@@ -75,27 +75,17 @@
 }
 //请求数据
 -(void)loadDataWithPage:(NSInteger)page{
-    NSString *url = [NSString stringWithFormat:@"%@%@%ld&title=%@",BaseUrl,NewsUrl,(long)page,self.titleStr];
     
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
+    [parameter setObject:self.titleStr forKey:@"title"];
+    [parameter setObject:[NSString stringWithFormat:@"%ld",(long)page] forKey:@"page"];
+        
     [LCProgressHUD showLoading:@""];
 
-    
-    [[HYDataService sharedClient] requestWithUrlString:[Tools chineseEncodingWithUrl:url] parameters:nil method:REQUEST_METHOD_GET success:^(id response, NSError *error, NSDictionary *dict) {
+    [[HYDataService sharedClient] requestWithUrlString:News_Base_Url parameters:parameter method:REQUEST_METHOD_POST success:^(id response, NSError *error) {
         [LCProgressHUD hide];
         
-        NSDictionary *dic = [response[@"showapi_res_body"] objectForKey:@"pagebean"];
-        NewsModel *newsModel = [NewsModel mj_objectWithKeyValues:dic];
-        
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *plistPath1= [paths objectAtIndex:0];
-        NSLog(@"------%@",plistPath1);
-        //得到完整的路径名
-        NSString *fileName = [plistPath1 stringByAppendingPathComponent:@"award_1.plist"];
-        NSFileManager *fm = [NSFileManager defaultManager];
-        if ([fm createFileAtPath:fileName contents:nil attributes:nil] ==YES) {
-//            [data[@"item"] writeToFile:fileName atomically:YES];
-            NSLog(@"-----------文件写入完成");
-        }
+        NewsModel *newsModel = [NewsModel mj_objectWithKeyValues:response[@"pagebean"]];
         
         //存入数据库
         for (Contentlist *contentList in newsModel.contentlist) {
@@ -107,7 +97,7 @@
         [self.newsTableView reloadData];
         
         [self.newsTableView.mj_header endRefreshing];
-    } failure:^(id response, NSError *error) {
+    } failure:^(NSError *error) {
         [LCProgressHUD hide];
         [self.newsTableView.mj_header endRefreshing];
     }];

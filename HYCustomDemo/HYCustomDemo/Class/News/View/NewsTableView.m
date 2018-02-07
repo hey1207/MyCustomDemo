@@ -10,7 +10,6 @@ static NSString *NEWSCELLID=@"NEWSCELLID";
 
 #import "NewsTableView.h"
 #import "NewsCell.h"
-#import "UITableViewCell+CellAnimation.h"
 
 @implementation NewsTableView {
     int _dataNum;
@@ -33,6 +32,7 @@ static NSString *NEWSCELLID=@"NEWSCELLID";
     self.dataSource=self;
     [self registerClass:[NewsCell class] forCellReuseIdentifier:NEWSCELLID];
     self.showsVerticalScrollIndicator = NO;
+    self.tableFooterView = [UIView new];
 }
 -(void)setDataArray:(NSArray *)dataArray{
     _dataArray = dataArray;
@@ -76,9 +76,6 @@ static NSString *NEWSCELLID=@"NEWSCELLID";
         self.selectCell(contentlist.link);
     }
 }
-//方式2:给cell添加动画
-//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-//     [cell animationForIndexPath:indexPath];
-//}
+
 
 @end

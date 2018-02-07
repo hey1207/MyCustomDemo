@@ -10,5 +10,6 @@ pod 'MJExtension'
 pod 'LXScrollContentView'
 pod 'FMDB'
 pod 'WHKit'
+pod "PYSearch"
 
 end

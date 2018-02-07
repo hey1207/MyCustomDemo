@@ -75,7 +75,8 @@
     [paramer setObject:city?city:@"朝阳" forKey:@"cityName"];
 
     [LCProgressHUD showLoading:@""];
-    [HYNetWorking PostWithURL:Search_Url Params:paramer success:^(id responseObject) {
+    [HYNetWorking PostWithURL:Hospital_Search_Url Params:paramer success:^(id responseObject) {
+        
         NSArray *tempArray = [[responseObject objectForKey:@"showapi_res_body"] objectForKey:@"hospitalList"];
         if (tempArray.count == 0) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -190,7 +191,7 @@
     self.searchBar = searchBar;
     
     titleView.userInteractionEnabled = YES;
-    UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(searchBar.frame)-20, 0, 120, 30)];
+    UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(searchBar.frame)-30, 0, 100, 30)];
     cityLabel.text = @"请选择地区";
     cityLabel.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1.0];
     cityLabel.adjustsFontSizeToFitWidth = YES;

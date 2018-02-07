@@ -19,27 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"医院信息";
-    
-    UIButton * leftBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    leftBtn.frame = CGRectMake(0, 0, 20,20);
-    [leftBtn setBackgroundImage:[UIImage imageNamed:@"backItemImage"] forState:UIControlStateNormal];
-    [leftBtn addTarget:self action:@selector(leftBarBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    NavTitleH(@"医院信息");
     
     [self loadData];
     [self.view addSubview:self.mainTableView];
 }
-- (void)leftBarBtnClicked:(UIButton *)btn{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 -(void)loadData{
     NSMutableDictionary *paramer = [NSMutableDictionary dictionary];
     [paramer setObject:@"43039" forKey:@"showapi_appid"];
     [paramer setObject:@"587ee3b043534ddf973ccd5bd5964ced" forKey:@"showapi_sign"];
     [paramer setObject:self.hosID forKey:@"id"];
     [LCProgressHUD showLoading:@""];
-    [HYNetWorking PostWithURL:HosDetail_Url Params:paramer success:^(id responseObject) {
+    [HYNetWorking PostWithURL:Hospital_Detail_Url Params:paramer success:^(id responseObject) {
         self.infoDic = [NSDictionary dictionaryWithDictionary:responseObject[@"showapi_res_body"]];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.mainTableView reloadData];

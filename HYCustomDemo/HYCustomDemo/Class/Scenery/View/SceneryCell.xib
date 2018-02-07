@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="232" id="KGk-i7-Jjw" customClass="SceneryCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="234"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="233.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京故宫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rff-Kw-u2A">
+                        <rect key="frame" x="5" y="10" width="310" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="tbt-Bo-QHW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="1" green="0.22360103937039078" blue="0.13188784116688335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="故宫，旧称紫禁城，是中国明、清两代24个皇帝的皇宫" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsR-5i-Zgz">
+                        <rect key="frame" x="5" y="35" width="310" height="31.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="北京东城区" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yK-cH-EKB">
+                        <rect key="frame" x="5" y="71.5" width="310" height="47"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="caJ-AZ-meO">
+                        <rect key="frame" x="5" y="123.5" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="caJ-AZ-meO" secondAttribute="height" multiplier="90:90" id="uHv-ki-bAf"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ory-4c-Xnt">
+                        <rect key="frame" x="110" y="123.5" width="100" height="100"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jaK-50-XWv">
+                        <rect key="frame" x="215" y="123.5" width="100" height="100"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="rff-Kw-u2A" secondAttribute="trailing" constant="5" id="3pe-bh-uqy"/>
+                    <constraint firstAttribute="trailing" secondItem="wsR-5i-Zgz" secondAttribute="trailing" constant="5" id="5EN-oa-ni5"/>
+                    <constraint firstItem="jaK-50-XWv" firstAttribute="height" secondItem="caJ-AZ-meO" secondAttribute="height" id="7hD-RP-WPJ"/>
+                    <constraint firstAttribute="trailing" secondItem="3yK-cH-EKB" secondAttribute="trailing" constant="5" id="BD4-MT-2Ba"/>
+                    <constraint firstItem="jaK-50-XWv" firstAttribute="leading" secondItem="Ory-4c-Xnt" secondAttribute="trailing" constant="5" id="FB0-rT-LUF"/>
+                    <constraint firstItem="Ory-4c-Xnt" firstAttribute="top" secondItem="caJ-AZ-meO" secondAttribute="top" id="G9a-9R-f7h"/>
+                    <constraint firstItem="jaK-50-XWv" firstAttribute="width" secondItem="caJ-AZ-meO" secondAttribute="width" id="Hjk-Zn-He1"/>
+                    <constraint firstItem="3yK-cH-EKB" firstAttribute="top" secondItem="wsR-5i-Zgz" secondAttribute="bottom" constant="5" id="KH3-dz-v0N"/>
+                    <constraint firstAttribute="trailing" secondItem="jaK-50-XWv" secondAttribute="trailing" constant="5" id="R1C-ut-RHM"/>
+                    <constraint firstItem="wsR-5i-Zgz" firstAttribute="top" secondItem="rff-Kw-u2A" secondAttribute="bottom" constant="5" id="SQz-Ft-kiC"/>
+                    <constraint firstAttribute="bottom" secondItem="jaK-50-XWv" secondAttribute="bottom" constant="10" id="TJs-d6-JPt"/>
+                    <constraint firstItem="rff-Kw-u2A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="XSd-Xo-KPM"/>
+                    <constraint firstItem="Ory-4c-Xnt" firstAttribute="leading" secondItem="caJ-AZ-meO" secondAttribute="trailing" constant="5" id="YaA-7h-wFA"/>
+                    <constraint firstItem="caJ-AZ-meO" firstAttribute="top" secondItem="3yK-cH-EKB" secondAttribute="bottom" constant="5" id="YkJ-Rs-1rf"/>
+                    <constraint firstItem="rff-Kw-u2A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="ZDR-ii-wRy"/>
+                    <constraint firstAttribute="bottom" secondItem="caJ-AZ-meO" secondAttribute="bottom" constant="10" id="aHY-M7-drx"/>
+                    <constraint firstItem="3yK-cH-EKB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="azd-Io-L30"/>
+                    <constraint firstAttribute="bottom" secondItem="Ory-4c-Xnt" secondAttribute="bottom" constant="10" id="dhM-H6-pZk"/>
+                    <constraint firstItem="caJ-AZ-meO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="h7S-nC-0aV"/>
+                    <constraint firstItem="Ory-4c-Xnt" firstAttribute="height" secondItem="caJ-AZ-meO" secondAttribute="height" id="i5s-q1-ymp"/>
+                    <constraint firstItem="wsR-5i-Zgz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="koK-1J-jeg"/>
+                    <constraint firstItem="jaK-50-XWv" firstAttribute="top" secondItem="Ory-4c-Xnt" secondAttribute="top" id="wzv-Rv-OBv"/>
+                    <constraint firstItem="Ory-4c-Xnt" firstAttribute="width" secondItem="caJ-AZ-meO" secondAttribute="width" id="ysb-wc-H58"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bottomMargin" destination="aHY-M7-drx" id="lTW-d9-bac"/>
+                <outlet property="centerImageView" destination="Ory-4c-Xnt" id="X06-K1-XkR"/>
+                <outlet property="centerMargin" destination="YaA-7h-wFA" id="drO-jK-Ft3"/>
+                <outlet property="leftImageView" destination="caJ-AZ-meO" id="2bJ-CP-uSn"/>
+                <outlet property="rightImageView" destination="jaK-50-XWv" id="znF-3k-sZx"/>
+                <outlet property="s_addrLabel" destination="3yK-cH-EKB" id="Bmu-RV-uri"/>
+                <outlet property="s_nameLabel" destination="rff-Kw-u2A" id="xGm-wN-uEJ"/>
+                <outlet property="s_summaryLabel" destination="wsR-5i-Zgz" id="dih-ne-qyh"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="142"/>
+        </tableViewCell>
+    </objects>
+</document>

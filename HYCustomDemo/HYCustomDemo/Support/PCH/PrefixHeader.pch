@@ -15,6 +15,7 @@
 #import <MJRefresh/MJRefresh.h>
 #import <LCProgressHUD.h>
 #import <WHKit.h>
+#import <PYSearch.h>
 
 #import "Tools.h"
 //FMDB

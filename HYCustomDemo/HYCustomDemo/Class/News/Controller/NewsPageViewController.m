@@ -82,11 +82,10 @@
         
     [LCProgressHUD showLoading:@""];
 
-    [[HYDataService sharedClient] requestWithUrlString:News_Base_Url parameters:parameter method:REQUEST_METHOD_POST success:^(id response, NSError *error, NSDictionary *dict) {
+    [[HYDataService sharedClient] requestWithUrlString:News_Base_Url parameters:parameter method:REQUEST_METHOD_POST success:^(id response, NSError *error) {
         [LCProgressHUD hide];
         
-        NSDictionary *dic = [response[@"showapi_res_body"] objectForKey:@"pagebean"];
-        NewsModel *newsModel = [NewsModel mj_objectWithKeyValues:dic];
+        NewsModel *newsModel = [NewsModel mj_objectWithKeyValues:response[@"pagebean"]];
         
         //存入数据库
         for (Contentlist *contentList in newsModel.contentlist) {
@@ -98,7 +97,7 @@
         [self.newsTableView reloadData];
         
         [self.newsTableView.mj_header endRefreshing];
-    } failure:^(id response, NSError *error) {
+    } failure:^(NSError *error) {
         [LCProgressHUD hide];
         [self.newsTableView.mj_header endRefreshing];
     }];

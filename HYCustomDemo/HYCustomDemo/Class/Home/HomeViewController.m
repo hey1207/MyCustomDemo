@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "NewsViewController.h"
 #import "HospitalViewController.h"
+#import "SceneryViewController.h"
 
 @interface HomeViewController ()
 
@@ -26,7 +27,7 @@
     CGFloat centerMargin = 10;
     CGFloat buttonWidth = (Main_Screen_Width-2*leftMargin-2*centerMargin)/3;
     CGFloat buttonHeight = buttonWidth*0.7;
-    NSArray *titleArray = @[@"新闻",@"医院",@"",@"",@"",@"",@""];
+    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"",@"",@"",@""];
     
     for (int i = 0; i<titleArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -53,11 +54,17 @@
         case 0:{
             NewsViewController *baseVC = [[NewsViewController alloc] init];
             [self.navigationController pushViewController:baseVC animated:YES];
-        }
             break;
+        }
         case 1:{
             HospitalViewController *hospitalVC = [[HospitalViewController alloc] init];
             [self.navigationController pushViewController:hospitalVC animated:YES];
+            break;
+        }
+        case 2:{
+            SceneryViewController *scenerylVC = [[SceneryViewController alloc] init];
+            [self.navigationController pushViewController:scenerylVC animated:YES];
+            break;
         }
         default:
             break;

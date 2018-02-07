@@ -30,6 +30,6 @@ typedef NS_ENUM(NSInteger, REQUEST_METHOD) {
 -(void)requestWithUrlString:(NSString *)urlString
                  parameters:(id)parameters
                      method:(REQUEST_METHOD)method
-                    success:(void (^)(id, NSError *, NSDictionary *))success
-                    failure:(void(^)(id,NSError *))failure;
+                    success:(void (^)(id, NSError *))success
+                    failure:(void(^)(NSError *))failure;
 @end

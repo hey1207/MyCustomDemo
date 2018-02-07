@@ -43,6 +43,10 @@
 		04D8AC55202991FB00401EF7 /* HYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D8AC54202991FB00401EF7 /* HYButton.m */; };
 		04D8AC5820299CB000401EF7 /* HYGetParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D8AC5720299CB000401EF7 /* HYGetParameter.m */; };
 		04D8AC5C2029AE4800401EF7 /* SceneryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D8AC5B2029AE4800401EF7 /* SceneryViewController.m */; };
+		04D8AC64202AA85700401EF7 /* SceneryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D8AC63202AA85700401EF7 /* SceneryModel.m */; };
+		04D8AC69202ACD5D00401EF7 /* SceneryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D8AC67202ACD5D00401EF7 /* SceneryCell.m */; };
+		04D8AC6A202ACD5D00401EF7 /* SceneryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D8AC68202ACD5D00401EF7 /* SceneryCell.xib */; };
+		04D8AC6D202AEC5100401EF7 /* CityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D8AC6C202AEC5100401EF7 /* CityCell.m */; };
 		7014427C995CED9D07601EBB /* libPods-HYCustomDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 336448D3EAF645E43BD03C43 /* libPods-HYCustomDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +137,13 @@
 		04D8AC5720299CB000401EF7 /* HYGetParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYGetParameter.m; sourceTree = "<group>"; };
 		04D8AC5A2029AE4800401EF7 /* SceneryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneryViewController.h; sourceTree = "<group>"; };
 		04D8AC5B2029AE4800401EF7 /* SceneryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneryViewController.m; sourceTree = "<group>"; };
+		04D8AC62202AA85700401EF7 /* SceneryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneryModel.h; sourceTree = "<group>"; };
+		04D8AC63202AA85700401EF7 /* SceneryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneryModel.m; sourceTree = "<group>"; };
+		04D8AC66202ACD5D00401EF7 /* SceneryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneryCell.h; sourceTree = "<group>"; };
+		04D8AC67202ACD5D00401EF7 /* SceneryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneryCell.m; sourceTree = "<group>"; };
+		04D8AC68202ACD5D00401EF7 /* SceneryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneryCell.xib; sourceTree = "<group>"; };
+		04D8AC6B202AEC5100401EF7 /* CityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityCell.h; sourceTree = "<group>"; };
+		04D8AC6C202AEC5100401EF7 /* CityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityCell.m; sourceTree = "<group>"; };
 		336448D3EAF645E43BD03C43 /* libPods-HYCustomDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYCustomDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C22DC79701F6442642BE5F /* Pods-HYCustomDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCustomDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYCustomDemo/Pods-HYCustomDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -442,10 +453,41 @@
 		04D8AC592029AE1900401EF7 /* Scenery */ = {
 			isa = PBXGroup;
 			children = (
+				04D8AC65202ACD3A00401EF7 /* View */,
+				04D8AC61202AA83800401EF7 /* Model */,
+				04D8AC60202AA82400401EF7 /* Controller */,
+			);
+			path = Scenery;
+			sourceTree = "<group>";
+		};
+		04D8AC60202AA82400401EF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				04D8AC5A2029AE4800401EF7 /* SceneryViewController.h */,
 				04D8AC5B2029AE4800401EF7 /* SceneryViewController.m */,
 			);
-			path = Scenery;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04D8AC61202AA83800401EF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04D8AC62202AA85700401EF7 /* SceneryModel.h */,
+				04D8AC63202AA85700401EF7 /* SceneryModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04D8AC65202ACD3A00401EF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04D8AC66202ACD5D00401EF7 /* SceneryCell.h */,
+				04D8AC67202ACD5D00401EF7 /* SceneryCell.m */,
+				04D8AC68202ACD5D00401EF7 /* SceneryCell.xib */,
+				04D8AC6B202AEC5100401EF7 /* CityCell.h */,
+				04D8AC6C202AEC5100401EF7 /* CityCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2A685DC61082AFC22D93597F /* Pods */ = {
@@ -576,6 +618,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D8AC6A202ACD5D00401EF7 /* SceneryCell.xib in Resources */,
 				0446CB3A1F2CD37900B781CF /* LaunchScreen.storyboard in Resources */,
 				041A476C20240B2400FB0EE7 /* hospital.plist in Resources */,
 				041A476620240B2400FB0EE7 /* Address.plist in Resources */,
@@ -633,6 +676,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-HYCustomDemo/Pods-HYCustomDemo-resources.sh",
 				"${PODS_ROOT}/LCProgressHUD/LCProgressHUD/LCProgressHUD.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/PYSearch/PYSearch/PYSearch.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -677,6 +721,7 @@
 				04C473AA1F2CE48B005AB420 /* HYDataService.m in Sources */,
 				0446CB2C1F2CD37900B781CF /* main.m in Sources */,
 				04A43EF21F307EE5000DBC7F /* NewsPageViewController.m in Sources */,
+				04D8AC69202ACD5D00401EF7 /* SceneryCell.m in Sources */,
 				04D8AC5820299CB000401EF7 /* HYGetParameter.m in Sources */,
 				04A43EEC1F307AC0000DBC7F /* NewsCell.m in Sources */,
 				04D8AC5120298AC800401EF7 /* NewsViewController.m in Sources */,
@@ -694,6 +739,8 @@
 				04D8AC49202988D300401EF7 /* ViewController.m in Sources */,
 				041A476920240B2400FB0EE7 /* HospitalViewController.m in Sources */,
 				04405E821F4D635200217D16 /* PhotosContainerView.m in Sources */,
+				04D8AC6D202AEC5100401EF7 /* CityCell.m in Sources */,
+				04D8AC64202AA85700401EF7 /* SceneryModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,17 +23,17 @@
     return _sharedClient;
 }
 
--(void)requestWithUrlString:(NSString *)urlString parameters:(id)parameters method:(REQUEST_METHOD)method success:(void (^)(id, NSError *, NSDictionary *))success failure:(void(^)(id,NSError *))failure{
+-(void)requestWithUrlString:(NSString *)urlString parameters:(id)parameters method:(REQUEST_METHOD)method success:(void (^)(id, NSError *))success failure:(void(^)(NSError *))failure{
     //get方式
     if (method == REQUEST_METHOD_GET) {
         [self GET:urlString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             if (responseObject) {
-                success(responseObject,nil,nil);
+                success(responseObject[@"showapi_res_body"],nil);
             }
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            failure(nil,error);
+            failure(error);
             NSLog(@"task.stase %ld %@",(long)task.state, task.response);
         }];
     }
@@ -44,10 +44,10 @@
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             if (responseObject) {
-                success(responseObject,nil,nil);
+                success(responseObject[@"showapi_res_body"],nil);
             }
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            failure(nil,error);
+            failure(error);
             NSLog(@"task.stase %ld %@",(long)task.state, task.response);
         }];
     }

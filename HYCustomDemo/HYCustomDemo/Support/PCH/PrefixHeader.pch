@@ -16,6 +16,7 @@
 #import <LCProgressHUD.h>
 #import <WHKit.h>
 #import <PYSearch.h>
+#import <KSPhotoBrowser.h>
 
 #import "Tools.h"
 //FMDB

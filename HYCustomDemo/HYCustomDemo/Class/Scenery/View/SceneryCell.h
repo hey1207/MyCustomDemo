@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SceneryModel.h"
 
+typedef void(^TapImageViewBlock)(void);
+
 @interface SceneryCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *s_nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *s_summaryLabel;
@@ -19,6 +21,8 @@
 
 @property (nonatomic,strong) S_Contentlist *s_contentlist;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerMargin;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomMargin;
+
+@property (nonatomic,copy) TapImageViewBlock tapImageViewBlock;
+
 @end

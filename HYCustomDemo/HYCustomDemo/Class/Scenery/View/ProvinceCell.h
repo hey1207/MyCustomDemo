@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CityCell : UITableViewCell
+@interface ProvinceCell : UITableViewCell
 @property (nonatomic,strong) UILabel *cityLabel;
 @property (nonatomic,strong) NSDictionary *dic;
 @end

@@ -26,8 +26,8 @@
     CGFloat leftMargin = 30;
     CGFloat centerMargin = 10;
     CGFloat buttonWidth = (Main_Screen_Width-2*leftMargin-2*centerMargin)/3;
-    CGFloat buttonHeight = buttonWidth*0.7;
-    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"",@"",@"",@""];
+    CGFloat buttonHeight = buttonWidth*0.5;
+    NSArray *titleArray = @[@"新闻",@"医院",@"景点"];
     
     for (int i = 0; i<titleArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

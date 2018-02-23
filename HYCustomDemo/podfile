@@ -13,5 +13,7 @@ pod 'FMDB'
 pod 'WHKit'
 pod "PYSearch"
 pod 'KSPhotoBrowser'
+pod 'DZNEmptyDataSet'
+pod 'MJCSegmentInterface'
 
 end

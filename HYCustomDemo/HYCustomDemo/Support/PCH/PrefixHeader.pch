@@ -17,6 +17,7 @@
 #import <WHKit.h>
 #import <PYSearch.h>
 #import <KSPhotoBrowser.h>
+#import <MJCSegmentInterface/MJCSegmentInterface.h>
 
 #import "Tools.h"
 //FMDB
@@ -50,6 +51,10 @@
 #define Scenery_City_Url @"http://route.showapi.com/268-3" //市
 #define Scenery_Area_Url @"http://route.showapi.com/268-4" //区
 
+//健康知识   https://www.showapi.com/api/view/90/86
+#define Health_List_Url @"http://route.showapi.com/90-86" //分类列表
+#define Health_Search_Url @"http://route.showapi.com/90-87" //搜索知识
+#define Health_Detail_Url @"http://route.showapi.com/90-88" //单条知识行情
 
 #endif /* PrefixHeader_pch */
 

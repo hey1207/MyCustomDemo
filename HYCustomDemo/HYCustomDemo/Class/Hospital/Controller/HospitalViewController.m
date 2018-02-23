@@ -28,13 +28,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     
     //第一次从本地加载数据，以后会做成缓存
     [self loadDataFromPlist];
 
     [self.view addSubview:self.mainTableView];
-
+    self.mainTableView.sd_layout.leftSpaceToView(self.view, 0).topSpaceToView(self.view, 0).rightSpaceToView(self.view, 0).bottomSpaceToView(self.view, 0);
+    
     //设置导航栏 titleView
     [self setBarButtonItem];
     
@@ -134,7 +134,7 @@
 }
 -(UITableView *)mainTableView{
     if (!_mainTableView) {
-        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height-64) style:UITableViewStylePlain];
+        _mainTableView = [[UITableView alloc] init];
         _mainTableView.backgroundColor = [UIColor whiteColor];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;

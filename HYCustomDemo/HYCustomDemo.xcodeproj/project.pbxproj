@@ -31,6 +31,12 @@
 		0446CB501F2CD37900B781CF /* HYCustomDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446CB4F1F2CD37900B781CF /* HYCustomDemoUITests.m */; };
 		0458F9FA202BF6B4004925AF /* HYPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0458F9F9202BF6B4004925AF /* HYPictureViewController.m */; };
 		0458F9FD202BF6DC004925AF /* SceneryDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0458F9FC202BF6DC004925AF /* SceneryDetailVC.m */; };
+		045D7AD3203EB72B00B00E16 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AD2203EB72B00B00E16 /* HealthViewController.m */; };
+		045D7AD9203EC25F00B00E16 /* HealthyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AD8203EC25F00B00E16 /* HealthyViewController.m */; };
+		045D7ADD203EC83900B00E16 /* H_TitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7ADC203EC83900B00E16 /* H_TitleModel.m */; };
+		045D7AE3203FEA1200B00E16 /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AE1203FEA1200B00E16 /* HealthCell.m */; };
+		045D7AE4203FEA1200B00E16 /* HealthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045D7AE2203FEA1200B00E16 /* HealthCell.xib */; };
+		045D7AE7203FEE0700B00E16 /* HealthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AE6203FEE0700B00E16 /* HealthModel.m */; };
 		049F35B61FA322F600C4F1D7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F35B51FA322F600C4F1D7 /* HomeViewController.m */; };
 		04A43ED71F302372000DBC7F /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43ED61F302372000DBC7F /* Tools.m */; };
 		04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43EE51F306DC0000DBC7F /* NewsModel.m */; };
@@ -119,6 +125,17 @@
 		0458F9FB202BF6DC004925AF /* SceneryDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneryDetailVC.h; sourceTree = "<group>"; };
 		0458F9FC202BF6DC004925AF /* SceneryDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneryDetailVC.m; sourceTree = "<group>"; };
 		0459B924103878DEF2604370 /* Pods-HYCustomDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCustomDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYCustomDemo/Pods-HYCustomDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		045D7AD1203EB72B00B00E16 /* HealthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthViewController.h; sourceTree = "<group>"; };
+		045D7AD2203EB72B00B00E16 /* HealthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthViewController.m; sourceTree = "<group>"; };
+		045D7AD7203EC25F00B00E16 /* HealthyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthyViewController.h; sourceTree = "<group>"; };
+		045D7AD8203EC25F00B00E16 /* HealthyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthyViewController.m; sourceTree = "<group>"; };
+		045D7ADB203EC83900B00E16 /* H_TitleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H_TitleModel.h; sourceTree = "<group>"; };
+		045D7ADC203EC83900B00E16 /* H_TitleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H_TitleModel.m; sourceTree = "<group>"; };
+		045D7AE0203FEA1200B00E16 /* HealthCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthCell.h; sourceTree = "<group>"; };
+		045D7AE1203FEA1200B00E16 /* HealthCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthCell.m; sourceTree = "<group>"; };
+		045D7AE2203FEA1200B00E16 /* HealthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthCell.xib; sourceTree = "<group>"; };
+		045D7AE5203FEE0700B00E16 /* HealthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthModel.h; sourceTree = "<group>"; };
+		045D7AE6203FEE0700B00E16 /* HealthModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthModel.m; sourceTree = "<group>"; };
 		049F35B41FA322F600C4F1D7 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		049F35B51FA322F600C4F1D7 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		04A43ED51F302372000DBC7F /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
@@ -335,6 +352,48 @@
 			path = HYCustomDemoUITests;
 			sourceTree = "<group>";
 		};
+		045D7AD0203EB6F100B00E16 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				045D7ADF203FE91600B00E16 /* Controller */,
+				045D7ADE203FE90A00B00E16 /* View */,
+				045D7ADA203EC80F00B00E16 /* Model */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		045D7ADA203EC80F00B00E16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				045D7ADB203EC83900B00E16 /* H_TitleModel.h */,
+				045D7ADC203EC83900B00E16 /* H_TitleModel.m */,
+				045D7AE5203FEE0700B00E16 /* HealthModel.h */,
+				045D7AE6203FEE0700B00E16 /* HealthModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		045D7ADE203FE90A00B00E16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				045D7AE0203FEA1200B00E16 /* HealthCell.h */,
+				045D7AE1203FEA1200B00E16 /* HealthCell.m */,
+				045D7AE2203FEA1200B00E16 /* HealthCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		045D7ADF203FE91600B00E16 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				045D7AD1203EB72B00B00E16 /* HealthViewController.h */,
+				045D7AD2203EB72B00B00E16 /* HealthViewController.m */,
+				045D7AD7203EC25F00B00E16 /* HealthyViewController.h */,
+				045D7AD8203EC25F00B00E16 /* HealthyViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		049F35B21FA322A700C4F1D7 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +502,7 @@
 		04C473A61F2CE3D4005AB420 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				045D7AD0203EB6F100B00E16 /* Health */,
 				04D8AC592029AE1900401EF7 /* Scenery */,
 				04D8AC4E202989D000401EF7 /* Home */,
 				049F35B31FA322BB00C4F1D7 /* Hospital */,
@@ -650,6 +710,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D8AC6A202ACD5D00401EF7 /* SceneryCell.xib in Resources */,
+				045D7AE4203FEA1200B00E16 /* HealthCell.xib in Resources */,
 				0446CB3A1F2CD37900B781CF /* LaunchScreen.storyboard in Resources */,
 				04B4AE91202D371C007BCD9F /* SecneryDetailCell.xib in Resources */,
 				041A476C20240B2400FB0EE7 /* hospital.plist in Resources */,
@@ -750,10 +811,12 @@
 				04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */,
 				041A476420240B2400FB0EE7 /* LZCityPickerView.m in Sources */,
 				041A477020240B2400FB0EE7 /* HosDetailCell.m in Sources */,
+				045D7AE3203FEA1200B00E16 /* HealthCell.m in Sources */,
 				04206ADD1F31B13500DF8762 /* HYWKViewController.m in Sources */,
 				04C473AA1F2CE48B005AB420 /* HYDataService.m in Sources */,
 				0446CB2C1F2CD37900B781CF /* main.m in Sources */,
 				04A43EF21F307EE5000DBC7F /* NewsPageViewController.m in Sources */,
+				045D7ADD203EC83900B00E16 /* H_TitleModel.m in Sources */,
 				04D8AC69202ACD5D00401EF7 /* SceneryCell.m in Sources */,
 				04D8AC5820299CB000401EF7 /* HYGetParameter.m in Sources */,
 				04A43EEC1F307AC0000DBC7F /* NewsCell.m in Sources */,
@@ -765,6 +828,7 @@
 				041A476B20240B2400FB0EE7 /* HospitalCell.m in Sources */,
 				041A476E20240B2400FB0EE7 /* HosDetailViewController.m in Sources */,
 				049F35B61FA322F600C4F1D7 /* HomeViewController.m in Sources */,
+				045D7AD9203EC25F00B00E16 /* HealthyViewController.m in Sources */,
 				04B4AE90202D371C007BCD9F /* SecneryDetailCell.m in Sources */,
 				041A477420240B5200FB0EE7 /* HYNetWorking.m in Sources */,
 				0458F9FD202BF6DC004925AF /* SceneryDetailVC.m in Sources */,
@@ -773,8 +837,10 @@
 				04A43EEF1F307BC8000DBC7F /* NewsTableView.m in Sources */,
 				04D8AC4A202988D300401EF7 /* AppDelegate.m in Sources */,
 				04D8AC49202988D300401EF7 /* ViewController.m in Sources */,
+				045D7AD3203EB72B00B00E16 /* HealthViewController.m in Sources */,
 				041A476920240B2400FB0EE7 /* HospitalViewController.m in Sources */,
 				04B4AE8C202C4692007BCD9F /* RCDraggableButton.m in Sources */,
+				045D7AE7203FEE0700B00E16 /* HealthModel.m in Sources */,
 				0458F9FA202BF6B4004925AF /* HYPictureViewController.m in Sources */,
 				04405E821F4D635200217D16 /* PhotosContainerView.m in Sources */,
 				04D8AC6D202AEC5100401EF7 /* ProvinceCell.m in Sources */,

@@ -10,6 +10,7 @@
 #import "NewsViewController.h"
 #import "HospitalViewController.h"
 #import "SceneryViewController.h"
+#import "HealthViewController.h"
 
 @interface HomeViewController ()
 
@@ -19,15 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+        
     CGFloat topMargin = 60;
     CGFloat leftMargin = 30;
     CGFloat centerMargin = 10;
     CGFloat buttonWidth = (Main_Screen_Width-2*leftMargin-2*centerMargin)/3;
     CGFloat buttonHeight = buttonWidth*0.5;
-    NSArray *titleArray = @[@"新闻",@"医院",@"景点"];
+    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"健康知识"];
     
     for (int i = 0; i<titleArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -51,21 +50,26 @@
 
 -(void)buttonAction:(UIButton *)button{
     switch (button.tag-100) {
-        case 0:{
-            NewsViewController *baseVC = [[NewsViewController alloc] init];
-            [self.navigationController pushViewController:baseVC animated:YES];
-            break;
-        }
-        case 1:{
-            HospitalViewController *hospitalVC = [[HospitalViewController alloc] init];
-            [self.navigationController pushViewController:hospitalVC animated:YES];
-            break;
-        }
-        case 2:{
-            SceneryViewController *scenerylVC = [[SceneryViewController alloc] init];
-            [self.navigationController pushViewController:scenerylVC animated:YES];
-            break;
-        }
+            case 0:{
+                NewsViewController *baseVC = [[NewsViewController alloc] init];
+                [self.navigationController pushViewController:baseVC animated:YES];
+                break;
+            }
+            case 1:{
+                HospitalViewController *hospitalVC = [[HospitalViewController alloc] init];
+                [self.navigationController pushViewController:hospitalVC animated:YES];
+                break;
+            }
+            case 2:{
+                SceneryViewController *sceneryVC = [[SceneryViewController alloc] init];
+                [self.navigationController pushViewController:sceneryVC animated:YES];
+                break;
+            }
+            case 3:{
+                HealthViewController *healthVC = [[HealthViewController alloc] init];
+                [self.navigationController pushViewController:healthVC animated:YES];
+                break;
+            }
         default:
             break;
     }
@@ -84,13 +88,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

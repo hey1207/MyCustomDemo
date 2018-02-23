@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NavTitleH(self.contentlist.name);
-    self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.mainTableView];
     self.mainTableView.sd_layout.leftSpaceToView(self.view, 0).topSpaceToView(self.view, 0).rightSpaceToView(self.view, 0).bottomSpaceToView(self.view, 0);

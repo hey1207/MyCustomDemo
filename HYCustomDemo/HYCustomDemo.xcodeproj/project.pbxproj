@@ -21,6 +21,11 @@
 		041A477020240B2400FB0EE7 /* HosDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A476120240B2300FB0EE7 /* HosDetailCell.m */; };
 		041A477420240B5200FB0EE7 /* HYNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A477320240B5200FB0EE7 /* HYNetWorking.m */; };
 		04206ADD1F31B13500DF8762 /* HYWKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04206ADC1F31B13500DF8762 /* HYWKViewController.m */; };
+		043DF2D820416C4F00146BF4 /* WMPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 043DF2CF20416C4F00146BF4 /* WMPlayer.bundle */; };
+		043DF2D920416C4F00146BF4 /* FastForwardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043DF2D420416C4F00146BF4 /* FastForwardView.xib */; };
+		043DF2DA20416C4F00146BF4 /* WMLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DF2D520416C4F00146BF4 /* WMLightView.m */; };
+		043DF2DB20416C4F00146BF4 /* FastForwardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DF2D620416C4F00146BF4 /* FastForwardView.m */; };
+		043DF2DC20416C4F00146BF4 /* WMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DF2D720416C4F00146BF4 /* WMPlayer.m */; };
 		04405E821F4D635200217D16 /* PhotosContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04405E811F4D635200217D16 /* PhotosContainerView.m */; };
 		04405E861F4E64D200217D16 /* HYDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04405E851F4E64D200217D16 /* HYDataBase.m */; };
 		0446CB2C1F2CD37900B781CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446CB2B1F2CD37900B781CF /* main.m */; };
@@ -37,6 +42,10 @@
 		045D7AE3203FEA1200B00E16 /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AE1203FEA1200B00E16 /* HealthCell.m */; };
 		045D7AE4203FEA1200B00E16 /* HealthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045D7AE2203FEA1200B00E16 /* HealthCell.xib */; };
 		045D7AE7203FEE0700B00E16 /* HealthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AE6203FEE0700B00E16 /* HealthModel.m */; };
+		045D7AEB2040115900B00E16 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AEA2040115900B00E16 /* VideoViewController.m */; };
+		045D7AF22041551300B00E16 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AF02041551300B00E16 /* VideoCell.m */; };
+		045D7AF32041551300B00E16 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045D7AF12041551300B00E16 /* VideoCell.xib */; };
+		045D7AF62041636A00B00E16 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AF52041636A00B00E16 /* VideoModel.m */; };
 		049F35B61FA322F600C4F1D7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F35B51FA322F600C4F1D7 /* HomeViewController.m */; };
 		04A43ED71F302372000DBC7F /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43ED61F302372000DBC7F /* Tools.m */; };
 		04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43EE51F306DC0000DBC7F /* NewsModel.m */; };
@@ -104,6 +113,14 @@
 		041A477320240B5200FB0EE7 /* HYNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetWorking.m; sourceTree = "<group>"; };
 		04206ADB1F31B13500DF8762 /* HYWKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYWKViewController.h; sourceTree = "<group>"; };
 		04206ADC1F31B13500DF8762 /* HYWKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYWKViewController.m; sourceTree = "<group>"; };
+		043DF2CF20416C4F00146BF4 /* WMPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WMPlayer.bundle; sourceTree = "<group>"; };
+		043DF2D020416C4F00146BF4 /* WMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPlayer.h; sourceTree = "<group>"; };
+		043DF2D220416C4F00146BF4 /* WMLightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMLightView.h; sourceTree = "<group>"; };
+		043DF2D320416C4F00146BF4 /* FastForwardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastForwardView.h; sourceTree = "<group>"; };
+		043DF2D420416C4F00146BF4 /* FastForwardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FastForwardView.xib; sourceTree = "<group>"; };
+		043DF2D520416C4F00146BF4 /* WMLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMLightView.m; sourceTree = "<group>"; };
+		043DF2D620416C4F00146BF4 /* FastForwardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastForwardView.m; sourceTree = "<group>"; };
+		043DF2D720416C4F00146BF4 /* WMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPlayer.m; sourceTree = "<group>"; };
 		04405E801F4D635200217D16 /* PhotosContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosContainerView.h; sourceTree = "<group>"; };
 		04405E811F4D635200217D16 /* PhotosContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosContainerView.m; sourceTree = "<group>"; };
 		04405E841F4E64D200217D16 /* HYDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDataBase.h; sourceTree = "<group>"; };
@@ -136,6 +153,13 @@
 		045D7AE2203FEA1200B00E16 /* HealthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthCell.xib; sourceTree = "<group>"; };
 		045D7AE5203FEE0700B00E16 /* HealthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthModel.h; sourceTree = "<group>"; };
 		045D7AE6203FEE0700B00E16 /* HealthModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthModel.m; sourceTree = "<group>"; };
+		045D7AE92040115900B00E16 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		045D7AEA2040115900B00E16 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		045D7AEF2041551300B00E16 /* VideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
+		045D7AF02041551300B00E16 /* VideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
+		045D7AF12041551300B00E16 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		045D7AF42041636A00B00E16 /* VideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		045D7AF52041636A00B00E16 /* VideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
 		049F35B41FA322F600C4F1D7 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		049F35B51FA322F600C4F1D7 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		04A43ED51F302372000DBC7F /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
@@ -266,6 +290,29 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		043DF2CE20416C4F00146BF4 /* WMPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				043DF2D120416C4F00146BF4 /* View */,
+				043DF2CF20416C4F00146BF4 /* WMPlayer.bundle */,
+				043DF2D020416C4F00146BF4 /* WMPlayer.h */,
+				043DF2D720416C4F00146BF4 /* WMPlayer.m */,
+			);
+			path = WMPlayer;
+			sourceTree = "<group>";
+		};
+		043DF2D120416C4F00146BF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				043DF2D220416C4F00146BF4 /* WMLightView.h */,
+				043DF2D520416C4F00146BF4 /* WMLightView.m */,
+				043DF2D320416C4F00146BF4 /* FastForwardView.h */,
+				043DF2D620416C4F00146BF4 /* FastForwardView.m */,
+				043DF2D420416C4F00146BF4 /* FastForwardView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04405E7F1F4D634600217D16 /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +441,44 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		045D7AE82040114000B00E16 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				045D7AEE2041530700B00E16 /* View */,
+				045D7AED204152FF00B00E16 /* Controller */,
+				045D7AEC204152F900B00E16 /* Model */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		045D7AEC204152F900B00E16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				045D7AF42041636A00B00E16 /* VideoModel.h */,
+				045D7AF52041636A00B00E16 /* VideoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		045D7AED204152FF00B00E16 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				045D7AE92040115900B00E16 /* VideoViewController.h */,
+				045D7AEA2040115900B00E16 /* VideoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		045D7AEE2041530700B00E16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				045D7AEF2041551300B00E16 /* VideoCell.h */,
+				045D7AF02041551300B00E16 /* VideoCell.m */,
+				045D7AF12041551300B00E16 /* VideoCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		049F35B21FA322A700C4F1D7 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +533,7 @@
 		04C4739F1F2CE392005AB420 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				043DF2CE20416C4F00146BF4 /* WMPlayer */,
 				04D8AC52202991D800401EF7 /* HYCustomView */,
 				041A477720240F3A00FB0EE7 /* CityPicker */,
 				04405E831F4E649E00217D16 /* FMDB */,
@@ -502,6 +588,7 @@
 		04C473A61F2CE3D4005AB420 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				045D7AE82040114000B00E16 /* Video */,
 				045D7AD0203EB6F100B00E16 /* Health */,
 				04D8AC592029AE1900401EF7 /* Scenery */,
 				04D8AC4E202989D000401EF7 /* Home */,
@@ -711,13 +798,16 @@
 			files = (
 				04D8AC6A202ACD5D00401EF7 /* SceneryCell.xib in Resources */,
 				045D7AE4203FEA1200B00E16 /* HealthCell.xib in Resources */,
+				045D7AF32041551300B00E16 /* VideoCell.xib in Resources */,
 				0446CB3A1F2CD37900B781CF /* LaunchScreen.storyboard in Resources */,
 				04B4AE91202D371C007BCD9F /* SecneryDetailCell.xib in Resources */,
 				041A476C20240B2400FB0EE7 /* hospital.plist in Resources */,
+				043DF2D820416C4F00146BF4 /* WMPlayer.bundle in Resources */,
 				041A476620240B2400FB0EE7 /* Address.plist in Resources */,
 				041A476720240B2400FB0EE7 /* city.plist in Resources */,
 				04B4AE93202D728C007BCD9F /* scenery_city.plist in Resources */,
 				0446CB371F2CD37900B781CF /* Assets.xcassets in Resources */,
+				043DF2D920416C4F00146BF4 /* FastForwardView.xib in Resources */,
 				0446CB351F2CD37900B781CF /* Main.storyboard in Resources */,
 				041A476A20240B2400FB0EE7 /* HospitalCell.xib in Resources */,
 				041A476D20240B2400FB0EE7 /* HosDetailCell.xib in Resources */,
@@ -811,6 +901,8 @@
 				04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */,
 				041A476420240B2400FB0EE7 /* LZCityPickerView.m in Sources */,
 				041A477020240B2400FB0EE7 /* HosDetailCell.m in Sources */,
+				043DF2DA20416C4F00146BF4 /* WMLightView.m in Sources */,
+				045D7AF62041636A00B00E16 /* VideoModel.m in Sources */,
 				045D7AE3203FEA1200B00E16 /* HealthCell.m in Sources */,
 				04206ADD1F31B13500DF8762 /* HYWKViewController.m in Sources */,
 				04C473AA1F2CE48B005AB420 /* HYDataService.m in Sources */,
@@ -822,6 +914,7 @@
 				04A43EEC1F307AC0000DBC7F /* NewsCell.m in Sources */,
 				04B4AE86202C3095007BCD9F /* MyPictureCell.m in Sources */,
 				04D8AC5120298AC800401EF7 /* NewsViewController.m in Sources */,
+				043DF2DB20416C4F00146BF4 /* FastForwardView.m in Sources */,
 				041A476520240B2400FB0EE7 /* LZPickerModel.m in Sources */,
 				04D8AC4D2029890800401EF7 /* RootViewController.m in Sources */,
 				04D8AC55202991FB00401EF7 /* HYButton.m in Sources */,
@@ -829,6 +922,7 @@
 				041A476E20240B2400FB0EE7 /* HosDetailViewController.m in Sources */,
 				049F35B61FA322F600C4F1D7 /* HomeViewController.m in Sources */,
 				045D7AD9203EC25F00B00E16 /* HealthyViewController.m in Sources */,
+				043DF2DC20416C4F00146BF4 /* WMPlayer.m in Sources */,
 				04B4AE90202D371C007BCD9F /* SecneryDetailCell.m in Sources */,
 				041A477420240B5200FB0EE7 /* HYNetWorking.m in Sources */,
 				0458F9FD202BF6DC004925AF /* SceneryDetailVC.m in Sources */,
@@ -836,6 +930,8 @@
 				04D8AC5C2029AE4800401EF7 /* SceneryViewController.m in Sources */,
 				04A43EEF1F307BC8000DBC7F /* NewsTableView.m in Sources */,
 				04D8AC4A202988D300401EF7 /* AppDelegate.m in Sources */,
+				045D7AF22041551300B00E16 /* VideoCell.m in Sources */,
+				045D7AEB2040115900B00E16 /* VideoViewController.m in Sources */,
 				04D8AC49202988D300401EF7 /* ViewController.m in Sources */,
 				045D7AD3203EB72B00B00E16 /* HealthViewController.m in Sources */,
 				041A476920240B2400FB0EE7 /* HospitalViewController.m in Sources */,

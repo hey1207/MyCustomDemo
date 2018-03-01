@@ -18,6 +18,8 @@
 #import <PYSearch.h>
 #import <KSPhotoBrowser.h>
 #import <MJCSegmentInterface/MJCSegmentInterface.h>
+#import "WMPlayer.h"
+#import <Masonry.h>
 
 #import "Tools.h"
 //FMDB
@@ -55,6 +57,9 @@
 #define Health_List_Url @"http://route.showapi.com/90-86" //分类列表
 #define Health_Search_Url @"http://route.showapi.com/90-87" //搜索知识
 #define Health_Detail_Url @"http://route.showapi.com/90-88" //单条知识行情
+
+//视频  https://www.showapi.com/api/view/255
+#define Video_List_Url @"http://route.showapi.com/255-1"
 
 #endif /* PrefixHeader_pch */
 

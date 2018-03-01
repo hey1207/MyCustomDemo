@@ -11,6 +11,7 @@
 #import "HospitalViewController.h"
 #import "SceneryViewController.h"
 #import "HealthViewController.h"
+#import "VideoViewController.h"
 
 @interface HomeViewController ()
 
@@ -26,7 +27,7 @@
     CGFloat centerMargin = 10;
     CGFloat buttonWidth = (Main_Screen_Width-2*leftMargin-2*centerMargin)/3;
     CGFloat buttonHeight = buttonWidth*0.5;
-    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"健康知识"];
+    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"健康知识",@"视频"];
     
     for (int i = 0; i<titleArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -68,6 +69,11 @@
             case 3:{
                 HealthViewController *healthVC = [[HealthViewController alloc] init];
                 [self.navigationController pushViewController:healthVC animated:YES];
+                break;
+            }
+            case 4:{
+                VideoViewController *videoVC = [[VideoViewController alloc] init];
+                [self.navigationController pushViewController:videoVC animated:YES];
                 break;
             }
         default:

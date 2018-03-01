@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     NavTitleH(@"实时新闻")
     
@@ -37,7 +37,7 @@
     
     self.titleView.sd_layout
     .leftSpaceToView(self.view, 0)
-    .topSpaceToView(self.view, 0)
+    .topSpaceToView(self.view, 64)
     .rightSpaceToView(self.view, 0)
     .heightIs(35);
     

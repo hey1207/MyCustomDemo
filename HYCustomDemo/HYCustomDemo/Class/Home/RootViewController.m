@@ -16,13 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    UIImage  * topBackImg = [[UIImage imageNamed:@"navBar"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    [self.navigationController.navigationBar setBackgroundImage:topBackImg forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    self.navigationController.navigationBar.translucent = NO;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    //导航条的返回按钮 http://blog.csdn.net/wyz670083956/article/details/52252023
+    UIBarButtonItem * bar = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = bar;
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

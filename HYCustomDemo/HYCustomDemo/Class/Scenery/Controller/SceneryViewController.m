@@ -9,25 +9,28 @@
 #import "SceneryViewController.h"
 #import "SceneryModel.h"
 #import "SceneryCell.h"
-#import "CityCell.h"
+#import "ProvinceCell.h"
+#import "HYPictureViewController.h"
+#import "SceneryDetailVC.h"
 
 @interface SceneryViewController ()<PYSearchViewControllerDataSource,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *leftTableView; //省列表
 @property (nonatomic,strong) UITableView *rightTableView;
-@property (nonatomic,strong) UITableView *cityTableView; //市列表
-@property (nonatomic,strong) UITableView *areaTableView; //区列表
 @property (nonatomic,strong) NSMutableArray *leftArray;
 @property (nonatomic,strong) NSMutableArray *rightArray;
+@property (nonatomic,strong) NSMutableArray *cityArray;
 
 @property (nonatomic,copy) NSString *proID; //省
+@property (nonatomic,copy) NSString *keyword; //搜索关键字
 @property (nonatomic,assign) NSInteger curPage; //当前页
+@property (nonatomic,assign) NSIndexPath *curIndexPath; //当前选中行
 @end
 
 @implementation SceneryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    NavTitleH(@"景点大全");
     
     self.curPage = 1;
     
@@ -43,37 +46,58 @@
     self.rightTableView.sd_layout.leftSpaceToView(self.leftTableView, 0).topEqualToView(self.leftTableView).rightSpaceToView(self.view, 0).bottomEqualToView(self.leftTableView);
     //下拉刷新
     self.rightTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self loadSceneryData:self.proID page:1];
+        [self loadSceneryData:self.proID page:1 keyword:self.keyword];
     }];
     //下拉加载
     self.rightTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         self.curPage ++ ;
-        [self loadSceneryData:self.proID page:self.curPage];
+        [self loadSceneryData:self.proID page:self.curPage keyword:self.keyword];
     }];
 }
 -(void)loadProvinceData{
-    [[HYDataService sharedClient] requestWithUrlString:Scenery_Province_Url parameters:nil method:REQUEST_METHOD_POST success:^(id response, NSError *error) {
-        [self.leftArray addObjectsFromArray:response[@"list"]];
-        [self.leftTableView reloadData];
-        //默认第一行选中（上海）
-        [self.leftTableView selectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
-        //实现点击第一行所调用的方法
-        [self tableView:self.leftTableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
-    } failure:^(NSError *error) {
-    }];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *hospitalPath = [[NSBundle mainBundle] pathForResource:@"scenery_city" ofType:@"plist"];
+        [self.leftArray addObjectsFromArray:[[NSArray alloc] initWithContentsOfFile:hospitalPath]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.leftTableView reloadData];
+            //默认第一行选中（上海）
+            self.curIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+            [self.leftTableView selectRowAtIndexPath:self.curIndexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+            //实现点击第一行所调用的方法
+            [self tableView:self.leftTableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+        });
+    });
+    //网络加载province
+//    [[HYDataService sharedClient] requestWithUrlString:Scenery_Province_Url parameters:nil method:REQUEST_METHOD_POST success:^(id response, NSError *error) {
+//        [self.leftArray addObjectsFromArray:response[@"list"]];
+//        [self.leftTableView reloadData];
+//    } failure:^(NSError *error) {
+//    }];
 }
--(void)loadSceneryData:(NSString *)proID page:(NSInteger)page{
+
+-(void)loadSceneryData:(NSString *)proID page:(NSInteger)page keyword:(NSString *)keyword{
     if (page == 1) {
         [self.rightArray removeAllObjects];
     }
     [LCProgressHUD showLoading:@""];
+    
     NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
     [parameter setObject:proID forKey:@"proId"];
     [parameter setObject:[NSString stringWithFormat:@"%ld",page] forKey:@"page"];
+    [parameter setObject:keyword forKey:@"keyword"];
+    
     [[HYDataService sharedClient] requestWithUrlString:Scenery_Search_Url parameters:parameter method:REQUEST_METHOD_POST success:^(id response, NSError *error) {
         [LCProgressHUD hide];
         [self.rightTableView.mj_header endRefreshing];
         [self.rightTableView.mj_footer endRefreshing];
+        
+        //搜索
+        if (self.keyword.length>0) {
+            [self.leftTableView deselectRowAtIndexPath:self.curIndexPath animated:YES];
+            [self.rightArray removeAllObjects];
+            [self.rightTableView reloadData];
+        }
+        
         SceneryModel *sceneryModel = [SceneryModel mj_objectWithKeyValues:response[@"pagebean"]];
         [self.rightArray addObjectsFromArray:sceneryModel.contentlist];
         [self.rightTableView reloadData];
@@ -90,29 +114,71 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView == self.leftTableView) {
         return self.leftArray.count;
-    }else{
+    }else if(tableView == self.rightTableView){
         return self.rightArray.count;
     }
+    return 0;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.leftTableView) {
-        CityCell *cell = [tableView dequeueReusableCellWithIdentifier:@"leftCell" forIndexPath:indexPath];
+        ProvinceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"leftCell" forIndexPath:indexPath];
         cell.dic = self.leftArray[indexPath.row];
         return cell;
-    }else{
+    }else if(tableView == self.rightTableView){
         SceneryCell *cell = (SceneryCell *)[[[NSBundle mainBundle] loadNibNamed:@"SceneryCell" owner:self options:nil] lastObject];
-        cell.s_contentlist = self.rightArray[indexPath.row];
+        S_Contentlist *contentlist = self.rightArray[indexPath.row];
+        cell.s_contentlist = contentlist;
+        cell.tapImageViewBlock = ^{
+            HYPictureViewController *hyPictureVC = [[HYPictureViewController alloc] init];
+            hyPictureVC.picArray = contentlist.picList;
+            [self.navigationController pushViewController:hyPictureVC animated:YES];
+        };
         return cell;
     }
+    return nil;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.leftTableView) {
+        self.curIndexPath = indexPath;
         self.proID = [self.leftArray[indexPath.row] objectForKey:@"id"];
-        [self loadSceneryData:self.proID page:1];
+        self.curPage = 1;
+        self.keyword = @"";
+        [self loadSceneryData:self.proID page:self.curPage keyword:self.keyword];
     }else{
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        SceneryDetailVC *sceneryDetailVC = [[SceneryDetailVC alloc] init];
+        sceneryDetailVC.contentlist = self.rightArray[indexPath.row];
+        [self.navigationController pushViewController:sceneryDetailVC animated:YES];
     }
 }
+
+-(void)createSearchButton{
+    UIButton *searchButton=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [searchButton setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
+    [searchButton addTarget:self action:@selector(searchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightitem=[[UIBarButtonItem alloc]initWithCustomView:searchButton];
+    self.navigationItem.rightBarButtonItem=rightitem;
+}
+#pragma mark ---------PYSearch--------
+-(void)searchButtonAction:(UIButton *)button{
+    NSArray *hotSeaches = @[@"故宫", @"圆明园",@"颐和园",@"北海", @"天坛", @"长城",@"南锣鼓巷"];
+    
+    PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"搜索景点" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            self.proID = @"";
+            self.curPage = 1;
+            self.keyword = searchText;
+            [self loadSceneryData:self.proID page:self.curPage keyword:searchText];
+        }];
+    }];
+    searchViewController.hotSearchStyle = PYHotSearchStyleDefault;
+    searchViewController.searchHistoryStyle = PYSearchHistoryStyleNormalTag;
+    searchViewController.dataSource = self;
+
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
+    [self presentViewController:nav  animated:NO completion:nil];
+}
+#pragma mark ---------懒加载---------
 -(UITableView *)leftTableView{
     if (!_leftTableView) {
         _leftTableView = [[UITableView alloc] init];
@@ -121,7 +187,7 @@
         _leftTableView.delegate = self;
         _leftTableView.dataSource = self;
         _leftTableView.separatorColor = [UIColor clearColor];
-        [_leftTableView registerClass:[CityCell class] forCellReuseIdentifier:@"leftCell"];
+        [_leftTableView registerClass:[ProvinceCell class] forCellReuseIdentifier:@"leftCell"];
         _leftTableView.rowHeight = 40;
     }
     return _leftTableView;
@@ -139,6 +205,7 @@
     }
     return _rightTableView;
 }
+
 -(NSMutableArray *)leftArray{
     if (!_leftArray) {
         _leftArray = [NSMutableArray array];
@@ -150,29 +217,6 @@
         _rightArray = [NSMutableArray array];
     }
     return _rightArray;
-}
--(void)createSearchButton{
-    UIButton *searchButton=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [searchButton setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
-    [searchButton addTarget:self action:@selector(searchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *rightitem=[[UIBarButtonItem alloc]initWithCustomView:searchButton];
-    self.navigationItem.rightBarButtonItem=rightitem;
-}
-#pragma mark ---------PYSearch--------
--(void)searchButtonAction:(UIButton *)button{
-    NSArray *hotSeaches = @[@"故宫", @"圆明园",@"颐和园",@"北海", @"天坛", @"长城",@"南锣鼓巷"];
-    
-    PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"搜索景点" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
-        [self dismissViewControllerAnimated:YES completion:^{
-            
-        }];
-    }];
-    searchViewController.hotSearchStyle = PYHotSearchStyleDefault;
-    searchViewController.searchHistoryStyle = PYSearchHistoryStyleNormalTag;
-    searchViewController.dataSource = self;
-
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
-    [self presentViewController:nav  animated:NO completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

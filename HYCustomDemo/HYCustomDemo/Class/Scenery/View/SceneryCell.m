@@ -52,10 +52,23 @@
         [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:picList.picUrlSmall]];
     }
 }
-
+-(void)tapImageView{
+    if (self.tapImageViewBlock) {
+        self.tapImageViewBlock();
+    }
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.s_summaryLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:13];
+    
+    self.contentView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImageView)];
+    [self.leftImageView addGestureRecognizer:tap1];
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImageView)];
+    [self.centerImageView addGestureRecognizer:tap2];
+    UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImageView)];
+    [self.rightImageView addGestureRecognizer:tap3];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

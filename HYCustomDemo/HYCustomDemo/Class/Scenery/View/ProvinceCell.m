@@ -6,10 +6,9 @@
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
-#import "CityCell.h"
+#import "ProvinceCell.h"
 
-@implementation CityCell
-
+@implementation ProvinceCell
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

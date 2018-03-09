@@ -46,6 +46,9 @@
 		045D7AF22041551300B00E16 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AF02041551300B00E16 /* VideoCell.m */; };
 		045D7AF32041551300B00E16 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045D7AF12041551300B00E16 /* VideoCell.xib */; };
 		045D7AF62041636A00B00E16 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AF52041636A00B00E16 /* VideoModel.m */; };
+		0484CF83204E40C2002CB1F6 /* WSLScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF80204E40C1002CB1F6 /* WSLScanView.m */; };
+		0484CF84204E40C2002CB1F6 /* WSLNativeScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF81204E40C1002CB1F6 /* WSLNativeScanTool.m */; };
+		0484CF88204E40F5002CB1F6 /* HYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF87204E40F5002CB1F6 /* HYCodeViewController.m */; };
 		049F35B61FA322F600C4F1D7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F35B51FA322F600C4F1D7 /* HomeViewController.m */; };
 		04A43ED71F302372000DBC7F /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43ED61F302372000DBC7F /* Tools.m */; };
 		04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43EE51F306DC0000DBC7F /* NewsModel.m */; };
@@ -160,6 +163,12 @@
 		045D7AF12041551300B00E16 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		045D7AF42041636A00B00E16 /* VideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
 		045D7AF52041636A00B00E16 /* VideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		0484CF7F204E40C1002CB1F6 /* WSLNativeScanTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLNativeScanTool.h; sourceTree = "<group>"; };
+		0484CF80204E40C1002CB1F6 /* WSLScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLScanView.m; sourceTree = "<group>"; };
+		0484CF81204E40C1002CB1F6 /* WSLNativeScanTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLNativeScanTool.m; sourceTree = "<group>"; };
+		0484CF82204E40C1002CB1F6 /* WSLScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLScanView.h; sourceTree = "<group>"; };
+		0484CF86204E40F5002CB1F6 /* HYCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCodeViewController.h; sourceTree = "<group>"; };
+		0484CF87204E40F5002CB1F6 /* HYCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYCodeViewController.m; sourceTree = "<group>"; };
 		049F35B41FA322F600C4F1D7 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		049F35B51FA322F600C4F1D7 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		04A43ED51F302372000DBC7F /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
@@ -479,6 +488,27 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0484CF7E204E40A2002CB1F6 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				0484CF85204E40D3002CB1F6 /* Third */,
+				0484CF86204E40F5002CB1F6 /* HYCodeViewController.h */,
+				0484CF87204E40F5002CB1F6 /* HYCodeViewController.m */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		0484CF85204E40D3002CB1F6 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				0484CF7F204E40C1002CB1F6 /* WSLNativeScanTool.h */,
+				0484CF81204E40C1002CB1F6 /* WSLNativeScanTool.m */,
+				0484CF82204E40C1002CB1F6 /* WSLScanView.h */,
+				0484CF80204E40C1002CB1F6 /* WSLScanView.m */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
 		049F35B21FA322A700C4F1D7 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +618,7 @@
 		04C473A61F2CE3D4005AB420 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				0484CF7E204E40A2002CB1F6 /* Code */,
 				045D7AE82040114000B00E16 /* Video */,
 				045D7AD0203EB6F100B00E16 /* Health */,
 				04D8AC592029AE1900401EF7 /* Scenery */,
@@ -861,6 +892,7 @@
 				"${PODS_ROOT}/LCProgressHUD/LCProgressHUD/LCProgressHUD.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/PYSearch/PYSearch/PYSearch.bundle",
+				"${PODS_ROOT}/ZFPlayer/ZFPlayer/ZFPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -915,6 +947,7 @@
 				04B4AE86202C3095007BCD9F /* MyPictureCell.m in Sources */,
 				04D8AC5120298AC800401EF7 /* NewsViewController.m in Sources */,
 				043DF2DB20416C4F00146BF4 /* FastForwardView.m in Sources */,
+				0484CF84204E40C2002CB1F6 /* WSLNativeScanTool.m in Sources */,
 				041A476520240B2400FB0EE7 /* LZPickerModel.m in Sources */,
 				04D8AC4D2029890800401EF7 /* RootViewController.m in Sources */,
 				04D8AC55202991FB00401EF7 /* HYButton.m in Sources */,
@@ -938,6 +971,8 @@
 				04B4AE8C202C4692007BCD9F /* RCDraggableButton.m in Sources */,
 				045D7AE7203FEE0700B00E16 /* HealthModel.m in Sources */,
 				0458F9FA202BF6B4004925AF /* HYPictureViewController.m in Sources */,
+				0484CF83204E40C2002CB1F6 /* WSLScanView.m in Sources */,
+				0484CF88204E40F5002CB1F6 /* HYCodeViewController.m in Sources */,
 				04405E821F4D635200217D16 /* PhotosContainerView.m in Sources */,
 				04D8AC6D202AEC5100401EF7 /* ProvinceCell.m in Sources */,
 				04D8AC64202AA85700401EF7 /* SceneryModel.m in Sources */,

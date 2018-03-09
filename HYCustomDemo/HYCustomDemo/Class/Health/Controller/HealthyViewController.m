@@ -55,7 +55,7 @@
     
     HYWKViewController *myWKWebView = [[HYWKViewController alloc] init];
     [self.navigationController pushViewController:myWKWebView animated:YES];
-    [myWKWebView loadRequestWithUrlString:list.wapurl methodStyle:METHOD_STYLE_UIWebView];
+    [myWKWebView loadRequestWithUrlString:list.wapurl methodStyle:METHOD_STYLE_WKWebView];
 }
 -(UITableView *)mainTableView{
     if (!_mainTableView) {

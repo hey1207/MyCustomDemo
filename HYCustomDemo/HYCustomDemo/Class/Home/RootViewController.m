@@ -22,6 +22,7 @@
     //导航条的返回按钮 http://blog.csdn.net/wyz670083956/article/details/52252023
     UIBarButtonItem * bar = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = bar;
+    //导航栏字体颜色
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 }
 

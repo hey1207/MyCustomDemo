@@ -9,7 +9,6 @@
 #import "HYWKViewController.h"
 
 @interface HYWKViewController ()
-
 @end
 
 @implementation HYWKViewController
@@ -87,12 +86,14 @@
         .rightSpaceToView(self.view, 0)
         .topSpaceToView(self.view, 0)
         .bottomSpaceToView(self.view, 0);
+
     }
     return _myUIWebView;
 }
+
 - (UIProgressView *)progressView{
     if(!_progressView){
-        _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0,1,Main_Screen_Width, 0)];
+        _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0,64,Main_Screen_Width, 2)];
         _progressView.tintColor = [UIColor orangeColor];
         _progressView.trackTintColor = [UIColor whiteColor];
         [self.view addSubview:_progressView];
@@ -123,6 +124,17 @@
         return NO;
     }
     return YES;
+    
+//    // 获取img标识index
+//    NSString *url = request.URL.absoluteString;
+//    NSRange range = [url rangeOfString:@"selectIndex="];
+//    if (range.location != NSNotFound) {
+//        NSInteger begin = range.location + range.length;
+//        NSString *index = [url substringFromIndex:begin];
+//        NSLog(@"img: %@", index);
+//        return NO;
+//    }
+//    return YES;
 }
 #pragma mark ================ WKUIDelegate ================
 // js-警告框
@@ -160,7 +172,7 @@
 }
 
 - (void)dealloc {
-//    [self.myWKWebView removeObserver:self forKeyPath:@"estimatedProgress"];
+    [self.myWKWebView removeObserver:self forKeyPath:@"estimatedProgress"];
 }
 
 - (void)didReceiveMemoryWarning {

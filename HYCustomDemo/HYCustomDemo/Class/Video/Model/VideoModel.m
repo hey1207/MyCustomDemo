@@ -10,10 +10,25 @@
 
 @implementation VideoModel
 +(NSDictionary *)mj_objectClassInArray{
-    return @{@"contentlist":[V_Contentlist class]};
+    return @{@"list":[V_List class]};
 }
 @end
 
-@implementation V_Contentlist
+@implementation V_List
++(NSDictionary *)mj_objectClassInArray{
+    return @{@"video":[V_Video class]};
+}
++(NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{@"id":@"videoID"};
+}
+@end
+
+@implementation V_Video
++(NSDictionary *)mj_objectClassInArray{
+    return @{@"v":[V_U class]};
+}
+@end
+
+@implementation V_U
 
 @end

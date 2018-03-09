@@ -30,7 +30,7 @@
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             if (responseObject) {
-                success(responseObject[@"showapi_res_body"],nil);
+                success(responseObject,nil);
             }
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             failure(error);
@@ -39,6 +39,7 @@
     }
     //post方式
     if (method == REQUEST_METHOD_POST) {
+        //易源专用
         NSDictionary *paraDic = [HYGetParameter getParameter:parameters];
         [self POST:urlString parameters:paraDic progress:^(NSProgress * _Nonnull uploadProgress) {
             

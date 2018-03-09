@@ -10,17 +10,23 @@
 
 @implementation VideoCell
 
--(void)setList:(V_Contentlist *)list{
-    _list = list;
+
+-(void)setList:(V_List *)list{
+    V_U *u = list.u;
+    NSString *iconStr = [u.header firstObject];
+    [self.iconImageVIew sd_setImageWithURL:[NSURL URLWithString:iconStr] placeholderImage:[UIImage imageNamed:@"head-default"]];
     
-    [self.iconImageVIew sd_setImageWithURL:[NSURL URLWithString:list.profile_image]];
+    self.nameLabel.text = u.name.length>0?u.name:@"186****1207";
+    self.createTimeLabel.text = [Tools compareCurrentTime:list.passtime];
     
-    self.nameLabel.text = list.name;
-    self.createTimeLabel.text = list.create_time;
+    self.centerLabel.text = list.text;
     
-    NSString *str = [list.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *textStr = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    self.centerLabel.text = textStr;
+    V_Video *video = list.video;
+    
+    self.imageHeight.constant = (CGFloat)video.height/video.width * Main_Screen_Width;
+    [self layoutIfNeeded];
+    
+    [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:[video.thumbnail firstObject]]];
 }
 
 - (IBAction)playButtonAction:(id)sender {
@@ -33,7 +39,7 @@
     [super awakeFromNib];
     
     self.iconImageVIew.layer.masksToBounds = YES;
-    self.iconImageVIew.layer.cornerRadius = 16;
+    self.iconImageVIew.layer.cornerRadius = 23;
     
     self.bgImageView.backgroundColor = [UIColor lightGrayColor];    
 }

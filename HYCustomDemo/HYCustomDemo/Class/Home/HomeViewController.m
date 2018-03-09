@@ -12,6 +12,7 @@
 #import "SceneryViewController.h"
 #import "HealthViewController.h"
 #import "VideoViewController.h"
+#import "HYCodeViewController.h"
 
 @interface HomeViewController ()
 
@@ -27,7 +28,7 @@
     CGFloat centerMargin = 10;
     CGFloat buttonWidth = (Main_Screen_Width-2*leftMargin-2*centerMargin)/3;
     CGFloat buttonHeight = buttonWidth*0.5;
-    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"健康知识",@"视频"];
+    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"健康知识",@"视频",@"二维码"];
     
     for (int i = 0; i<titleArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -51,31 +52,36 @@
 
 -(void)buttonAction:(UIButton *)button{
     switch (button.tag-100) {
-            case 0:{
-                NewsViewController *baseVC = [[NewsViewController alloc] init];
-                [self.navigationController pushViewController:baseVC animated:YES];
-                break;
-            }
-            case 1:{
-                HospitalViewController *hospitalVC = [[HospitalViewController alloc] init];
-                [self.navigationController pushViewController:hospitalVC animated:YES];
-                break;
-            }
-            case 2:{
-                SceneryViewController *sceneryVC = [[SceneryViewController alloc] init];
-                [self.navigationController pushViewController:sceneryVC animated:YES];
-                break;
-            }
-            case 3:{
-                HealthViewController *healthVC = [[HealthViewController alloc] init];
-                [self.navigationController pushViewController:healthVC animated:YES];
-                break;
-            }
-            case 4:{
-                VideoViewController *videoVC = [[VideoViewController alloc] init];
-                [self.navigationController pushViewController:videoVC animated:YES];
-                break;
-            }
+        case 0:{
+            NewsViewController *baseVC = [[NewsViewController alloc] init];
+            [self.navigationController pushViewController:baseVC animated:YES];
+            break;
+        }
+        case 1:{
+            HospitalViewController *hospitalVC = [[HospitalViewController alloc] init];
+            [self.navigationController pushViewController:hospitalVC animated:YES];
+            break;
+        }
+        case 2:{
+            SceneryViewController *sceneryVC = [[SceneryViewController alloc] init];
+            [self.navigationController pushViewController:sceneryVC animated:YES];
+            break;
+        }
+        case 3:{
+            HealthViewController *healthVC = [[HealthViewController alloc] init];
+            [self.navigationController pushViewController:healthVC animated:YES];
+            break;
+        }
+        case 4:{
+            VideoViewController *videoVC = [[VideoViewController alloc] init];
+            [self.navigationController pushViewController:videoVC animated:YES];
+            break;
+        }
+        case 5:{
+            HYCodeViewController *codeVC = [[HYCodeViewController alloc] init];
+            [self.navigationController pushViewController:codeVC animated:YES];
+        }
+            break;
         default:
             break;
     }

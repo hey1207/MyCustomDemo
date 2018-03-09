@@ -15,7 +15,9 @@ pod "PYSearch"
 pod 'KSPhotoBrowser'
 pod 'DZNEmptyDataSet'
 pod 'MJCSegmentInterface'
-#pod 'WMPlayer'
 pod 'Masonry'
+pod 'NJKWebViewProgress'
+pod 'ZFPlayer'
+pod 'ZFDownload'
 
 end

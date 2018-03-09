@@ -7,16 +7,34 @@
 //
 
 #import <Foundation/Foundation.h>
-@class V_Contentlist;
+@class V_List,V_Video,V_U;
 
 @interface VideoModel : NSObject
-@property (nonatomic,strong) NSArray <V_Contentlist *> *contentlist;
+@property (nonatomic,strong) NSArray <V_List *> *list;
 @end
 
-@interface V_Contentlist : NSObject
-@property (nonatomic,copy) NSString *text;
-@property (nonatomic,copy) NSString *name; //name
-@property (nonatomic,copy) NSString *profile_image; //icon
-@property (nonatomic,copy) NSString *video_uri;
-@property (nonatomic,copy) NSString *create_time;
+@interface V_List : NSObject
+@property (nonatomic,strong) V_Video *video;
+@property (nonatomic,copy)   NSString *videoID;
+@property (nonatomic,copy)   NSString *passtime;
+@property (nonatomic,copy)   NSString *type;
+@property (nonatomic,copy)   NSString *text;
+@property (nonatomic,copy)   NSString *share_url;
+@property (nonatomic,strong) V_U *u;
+@end
+
+@interface V_Video : NSObject
+@property (nonatomic,assign) CGFloat height;
+@property (nonatomic,assign) CGFloat width;
+@property (nonatomic,copy)   NSString *duration;
+@property (nonatomic,strong) NSArray *thumbnail;
+@property (nonatomic,strong) NSArray *download;
+@property (nonatomic,strong) NSArray *thumbnail_small;
+@property (nonatomic,strong) NSArray *video;
+@end
+
+@interface V_U : NSObject
+@property (nonatomic,copy)   NSString *room_name;
+@property (nonatomic,strong)  NSArray *header;
+@property (nonatomic,copy)   NSString *name;
 @end

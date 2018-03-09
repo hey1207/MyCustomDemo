@@ -19,11 +19,11 @@ typedef void(^ClickPlayButtonBlock)(void);
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *iconWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameLeft;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeight;
+
 
 @property (nonatomic,copy) ClickPlayButtonBlock clickPlayButtonBlock;
 
-@property (nonatomic,strong) V_Contentlist *list;
+@property (nonatomic,strong) V_List *list;
 
 @end

@@ -49,6 +49,8 @@
 		0484CF83204E40C2002CB1F6 /* WSLScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF80204E40C1002CB1F6 /* WSLScanView.m */; };
 		0484CF84204E40C2002CB1F6 /* WSLNativeScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF81204E40C1002CB1F6 /* WSLNativeScanTool.m */; };
 		0484CF88204E40F5002CB1F6 /* HYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF87204E40F5002CB1F6 /* HYCodeViewController.m */; };
+		049DE36A205A50380061B13D /* SingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DE369205A50380061B13D /* SingleView.m */; };
+		049DE36E205A59A20061B13D /* SingleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049DE36D205A59A20061B13D /* SingleView.xib */; };
 		049F35B61FA322F600C4F1D7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F35B51FA322F600C4F1D7 /* HomeViewController.m */; };
 		04A43ED71F302372000DBC7F /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43ED61F302372000DBC7F /* Tools.m */; };
 		04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43EE51F306DC0000DBC7F /* NewsModel.m */; };
@@ -169,6 +171,9 @@
 		0484CF82204E40C1002CB1F6 /* WSLScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLScanView.h; sourceTree = "<group>"; };
 		0484CF86204E40F5002CB1F6 /* HYCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCodeViewController.h; sourceTree = "<group>"; };
 		0484CF87204E40F5002CB1F6 /* HYCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYCodeViewController.m; sourceTree = "<group>"; };
+		049DE368205A50380061B13D /* SingleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleView.h; sourceTree = "<group>"; };
+		049DE369205A50380061B13D /* SingleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleView.m; sourceTree = "<group>"; };
+		049DE36D205A59A20061B13D /* SingleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleView.xib; sourceTree = "<group>"; };
 		049F35B41FA322F600C4F1D7 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		049F35B51FA322F600C4F1D7 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		04A43ED51F302372000DBC7F /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
@@ -569,19 +574,11 @@
 				04405E831F4E649E00217D16 /* FMDB */,
 				04405E7F1F4D634600217D16 /* CommonView */,
 				04206ADA1F31B12200DF8762 /* WebView */,
-				04C473A01F2CE392005AB420 /* Category */,
 				04C473A11F2CE392005AB420 /* DataService */,
 				04C473A21F2CE392005AB420 /* PCH */,
 				04C473A51F2CE392005AB420 /* Tools */,
 			);
 			path = Support;
-			sourceTree = "<group>";
-		};
-		04C473A01F2CE392005AB420 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		04C473A11F2CE392005AB420 /* DataService */ = {
@@ -636,6 +633,9 @@
 				04D8AC4C2029890800401EF7 /* RootViewController.m */,
 				049F35B41FA322F600C4F1D7 /* HomeViewController.h */,
 				049F35B51FA322F600C4F1D7 /* HomeViewController.m */,
+				049DE368205A50380061B13D /* SingleView.h */,
+				049DE369205A50380061B13D /* SingleView.m */,
+				049DE36D205A59A20061B13D /* SingleView.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -839,6 +839,7 @@
 				04B4AE93202D728C007BCD9F /* scenery_city.plist in Resources */,
 				0446CB371F2CD37900B781CF /* Assets.xcassets in Resources */,
 				043DF2D920416C4F00146BF4 /* FastForwardView.xib in Resources */,
+				049DE36E205A59A20061B13D /* SingleView.xib in Resources */,
 				0446CB351F2CD37900B781CF /* Main.storyboard in Resources */,
 				041A476A20240B2400FB0EE7 /* HospitalCell.xib in Resources */,
 				041A476D20240B2400FB0EE7 /* HosDetailCell.xib in Resources */,
@@ -929,6 +930,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04405E861F4E64D200217D16 /* HYDataBase.m in Sources */,
+				049DE36A205A50380061B13D /* SingleView.m in Sources */,
 				04A43ED71F302372000DBC7F /* Tools.m in Sources */,
 				04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */,
 				041A476420240B2400FB0EE7 /* LZCityPickerView.m in Sources */,

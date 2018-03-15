@@ -14,6 +14,8 @@
 #import "VideoViewController.h"
 #import "HYCodeViewController.h"
 
+#import "SingleView.h"
+
 @interface HomeViewController ()
 
 @end
@@ -23,35 +25,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
         
-    CGFloat topMargin = 60;
-    CGFloat leftMargin = 30;
-    CGFloat centerMargin = 10;
-    CGFloat buttonWidth = (Main_Screen_Width-2*leftMargin-2*centerMargin)/3;
-    CGFloat buttonHeight = buttonWidth*0.5;
-    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"健康知识",@"视频",@"二维码"];
+    CGFloat topMargin = 10; //行距
+    CGFloat leftMargin = 10; //左右两边
+    CGFloat centerMargin = 0; //列距
+    NSInteger count = 4;
+    CGFloat buttonWidth = (Main_Screen_Width-2*leftMargin-2*centerMargin)/count;
+    CGFloat buttonHeight = buttonWidth;
+    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"健康知识",@"小视频"];
+    NSArray *imgArray = @[@"home_news",@"home_hospital",@"home_scenery",@"home_health",@"home_video"];
     
     for (int i = 0; i<titleArray.count; i++) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.backgroundColor = [UIColor lightGrayColor];
-        [button setTitle:titleArray[i] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        button.layer.masksToBounds = YES;
-        button.layer.cornerRadius = 5;
-        [self.view addSubview:button];
+        SingleView *singleView = [[NSBundle mainBundle] loadNibNamed:@"SingleView" owner:self options:nil].firstObject;
+        singleView.topImageView.image = [UIImage imageNamed:imgArray[i]];
+        singleView.bottomLabel.text = titleArray[i];
+        [self.view addSubview:singleView];
+        singleView.tag = 100+i;
         
-        button.tag = 100+i;
-        [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        
-        button.sd_layout
-        .leftSpaceToView(self.view, leftMargin+(buttonWidth+centerMargin)*(i%3))
-        .topSpaceToView(self.view, topMargin+(buttonHeight+centerMargin)*(i/3))
+        singleView.sd_layout
+        .leftSpaceToView(self.view, leftMargin+(buttonWidth+centerMargin)*(i%count))
+        .topSpaceToView(self.view, 50+(topMargin+buttonHeight+centerMargin)*(i/count))
         .widthIs(buttonWidth)
         .heightIs(buttonHeight);
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+        [singleView addGestureRecognizer:tap];
     }
 }
 
--(void)buttonAction:(UIButton *)button{
-    switch (button.tag-100) {
+-(void)tapAction:(UIGestureRecognizer *)tap{
+    switch (tap.view.tag-100) {
         case 0:{
             NewsViewController *baseVC = [[NewsViewController alloc] init];
             [self.navigationController pushViewController:baseVC animated:YES];
@@ -78,14 +80,15 @@
             break;
         }
         case 5:{
-            HYCodeViewController *codeVC = [[HYCodeViewController alloc] init];
-            [self.navigationController pushViewController:codeVC animated:YES];
+            //            HYCodeViewController *codeVC = [[HYCodeViewController alloc] init];
+            //            [self.navigationController pushViewController:codeVC animated:YES];
         }
             break;
         default:
             break;
     }
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];

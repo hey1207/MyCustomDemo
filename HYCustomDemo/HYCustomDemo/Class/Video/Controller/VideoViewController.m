@@ -14,13 +14,14 @@
 #import <ZFPlayerView.h>
 #import <ZFDownloadManager.h>
 
-@interface VideoViewController ()<UITableViewDelegate,UITableViewDataSource,ZFPlayerDelegate>
+@interface VideoViewController ()<UITableViewDelegate,UITableViewDataSource,ZFPlayerDelegate,ZFPlayerControlViewDelagate>
 @property (nonatomic,strong) UITableView *mainTableView;
 @property (nonatomic,strong) NSMutableArray *modelArray;
 
 @property (nonatomic, strong) ZFPlayerView *playerView;
 @property (nonatomic, strong) ZFPlayerControlView *controlView;
 
+@property (nonatomic,copy) NSString *np; //替代页数
 @end
 
 @implementation VideoViewController
@@ -29,20 +30,42 @@
     [super viewDidLoad];
     NavTitleH(@"小视频");
     
-    [self loadData];
+    self.np = @"0"; //默认
+    [self loadDataWithPage:self.np];
     
     [self.view addSubview:self.mainTableView];
     self.mainTableView.sd_layout.leftSpaceToView(self.view, 0).topSpaceToView(self.view, 0).rightSpaceToView(self.view, 0).bottomSpaceToView(self.view, 0);
+    
+    //空白页
+    [self.mainTableView setupEmptyDataText:@"木有更多数据" verticalOffset:30 emptyImage:[UIImage imageNamed:@"none"] tapBlock:^{
+        [self loadDataWithPage:@"0"];
+    }];
+    //刷新
+    __weak typeof(self) weakself = self;
+    [self.mainTableView setRefreshWithHeaderBlock:^{
+        weakself.np = @"0";
+        [weakself.modelArray removeAllObjects];
+        [weakself loadDataWithPage:weakself.np];
+    } footerBlock:^{
+        [weakself loadDataWithPage:weakself.np];
+    }];
 }
--(void)loadData{
-    [[HYDataService sharedClient] requestWithUrlString:Video_List_Url parameters:nil method:REQUEST_METHOD_GET success:^(id response, NSError *error) {
+-(void)loadDataWithPage:(NSString *)np{
+    [LCProgressHUD showLoading:@""];
+    [[HYDataService sharedClient] requestWithUrlString:[NSString stringWithFormat:@"http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.5.6/%@-20.json",np] parameters:nil method:REQUEST_METHOD_GET success:^(id response, NSError *error) {
         [LCProgressHUD hide];
+        [self.mainTableView headerEndRefreshing];
+        [self.mainTableView footerEndRefreshing];
+
         VideoModel *model = [VideoModel mj_objectWithKeyValues:response];
+        _np = model.info[@"np"];
         [self.modelArray addObjectsFromArray:model.list];
         [self.mainTableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"请求视频列表失败");
         [LCProgressHUD hide];
+        [self.mainTableView headerEndRefreshing];
+        [self.mainTableView footerEndRefreshing];
     }];
 }
 
@@ -75,7 +98,7 @@
         // 设置播放控制层和model
         [self.playerView playerControlView:self.controlView playerModel:playerModel];
         // 下载功能
-        self.playerView.hasDownload = YES;
+        self.playerView.hasDownload = NO;
         // 自动播放
         [self.playerView autoPlayTheVideo];
     };
@@ -99,10 +122,10 @@
         // 移除屏幕移除player
         // _playerView.stopPlayWhileCellNotVisable = YES;
         
-        ZFPlayerShared.isLockScreen = YES;
+        ZFPlayerShared.isLockScreen = NO;
         ZFPlayerShared.isStatusBarHidden = NO;
         
-        _playerView.hasDownload = YES;
+//        _playerView.hasDownload = YES;
     }
     return _playerView;
 }
@@ -113,17 +136,17 @@
     }
     return _controlView;
 }
-
-
+#pragma mark - ZFPlayerControlViewDelagate
+-(void)zf_controlView:(UIView *)controlView closeAction:(UIButton *)sender{
+    NSLog(@"123");
+}
 #pragma mark - ZFPlayerDelegate
-
 - (void)zf_playerDownload:(NSString *)url {
-    //     此处是截取的下载地址，可以自己根据服务器的视频名称来赋值
+    // 此处是截取的下载地址，可以自己根据服务器的视频名称来赋值
     NSString *name = [url lastPathComponent];
     [[ZFDownloadManager sharedDownloadManager] downFileUrl:url filename:name fileimage:nil];
     // 设置最多同时下载个数（默认是3）
     [ZFDownloadManager sharedDownloadManager].maxCount = 4;
-    
 }
 
 

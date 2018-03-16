@@ -31,7 +31,13 @@
 #import "RootViewController.h"
 //webView
 #import "HYWKViewController.h"
+#import "WHWebViewController.h"
 
+#import "UIScrollView+HYEmptyDataSet.h"
+#import "UIScrollView+HYRefresh.h"
+#import "UIViewController+BackButtonHandler.h"
+
+// =================================== 宏 ===========================================
 #define Main_Screen_Width [UIScreen mainScreen].bounds.size.width
 #define Main_Screen_Height [UIScreen mainScreen].bounds.size.height
 
@@ -39,6 +45,7 @@
 #define NavTitleH(T_E_X_T)   UILabel * titleLable=[[UILabel alloc]init];titleLable.text=(T_E_X_T);titleLable.backgroundColor=[UIColor clearColor];titleLable.frame=CGRectMake(0, 0, 30, 30);titleLable.font=[UIFont fontWithName:@"PingFangSC-Regular" size:18];titleLable.textColor=[UIColor blackColor];self.navigationItem.titleView=titleLable;
 
 
+// =================================== URL ===========================================
 //新闻API接口
 #define News_Base_Url @"http://route.showapi.com/109-35"
 
@@ -59,7 +66,7 @@
 
 //视频  https://www.showapi.com/api/view/255
 //#define Video_List_Url @"http://route.showapi.com/255-1"
-#define Video_List_Url @"http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.5.6/0-20.json"
+//#define Video_List_Url @"http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.5.6/%@-20.json"
 
 #endif /* PrefixHeader_pch */
 

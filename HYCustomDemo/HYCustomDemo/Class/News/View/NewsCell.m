@@ -26,7 +26,7 @@
 
 -(void)createUI{
     UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.font = [UIFont systemFontOfSize:18];
+    titleLabel.font = [UIFont systemFontOfSize:16];
     titleLabel.textColor = [UIColor blackColor];
     titleLabel.textAlignment = NSTextAlignmentLeft;
     titleLabel.numberOfLines = 0;
@@ -34,9 +34,9 @@
     self.titleLabel = titleLabel;
     
     UILabel *contentLabel = [[UILabel alloc] init];
-    contentLabel.font = [UIFont systemFontOfSize:16];
+    contentLabel.font = [UIFont systemFontOfSize:14];
     contentLabel.textColor = [UIColor grayColor];
-    contentLabel.numberOfLines = 2;
+    contentLabel.numberOfLines = 3;
     contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
     contentLabel.textAlignment = NSTextAlignmentLeft;
     self.contentLabel = contentLabel;

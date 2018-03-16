@@ -21,13 +21,10 @@
 		041A477020240B2400FB0EE7 /* HosDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A476120240B2300FB0EE7 /* HosDetailCell.m */; };
 		041A477420240B5200FB0EE7 /* HYNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A477320240B5200FB0EE7 /* HYNetWorking.m */; };
 		04206ADD1F31B13500DF8762 /* HYWKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04206ADC1F31B13500DF8762 /* HYWKViewController.m */; };
-		043DF2D820416C4F00146BF4 /* WMPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 043DF2CF20416C4F00146BF4 /* WMPlayer.bundle */; };
-		043DF2D920416C4F00146BF4 /* FastForwardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043DF2D420416C4F00146BF4 /* FastForwardView.xib */; };
-		043DF2DA20416C4F00146BF4 /* WMLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DF2D520416C4F00146BF4 /* WMLightView.m */; };
-		043DF2DB20416C4F00146BF4 /* FastForwardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DF2D620416C4F00146BF4 /* FastForwardView.m */; };
-		043DF2DC20416C4F00146BF4 /* WMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DF2D720416C4F00146BF4 /* WMPlayer.m */; };
 		04405E821F4D635200217D16 /* PhotosContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04405E811F4D635200217D16 /* PhotosContainerView.m */; };
 		04405E861F4E64D200217D16 /* HYDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04405E851F4E64D200217D16 /* HYDataBase.m */; };
+		0442328B205BA17D00ADA061 /* WHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04423289205BA17D00ADA061 /* WHWebViewController.m */; };
+		0442328E205BAD4300ADA061 /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0442328D205BAD4200ADA061 /* UIViewController+BackButtonHandler.m */; };
 		0446CB2C1F2CD37900B781CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446CB2B1F2CD37900B781CF /* main.m */; };
 		0446CB351F2CD37900B781CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0446CB331F2CD37900B781CF /* Main.storyboard */; };
 		0446CB371F2CD37900B781CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0446CB361F2CD37900B781CF /* Assets.xcassets */; };
@@ -51,6 +48,8 @@
 		0484CF88204E40F5002CB1F6 /* HYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF87204E40F5002CB1F6 /* HYCodeViewController.m */; };
 		049DE36A205A50380061B13D /* SingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DE369205A50380061B13D /* SingleView.m */; };
 		049DE36E205A59A20061B13D /* SingleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049DE36D205A59A20061B13D /* SingleView.xib */; };
+		049DE375205B66D50061B13D /* UIScrollView+HYEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DE374205B66D50061B13D /* UIScrollView+HYEmptyDataSet.m */; };
+		049DE378205B67EA0061B13D /* UIScrollView+HYRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DE377205B67EA0061B13D /* UIScrollView+HYRefresh.m */; };
 		049F35B61FA322F600C4F1D7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F35B51FA322F600C4F1D7 /* HomeViewController.m */; };
 		04A43ED71F302372000DBC7F /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43ED61F302372000DBC7F /* Tools.m */; };
 		04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43EE51F306DC0000DBC7F /* NewsModel.m */; };
@@ -118,18 +117,14 @@
 		041A477320240B5200FB0EE7 /* HYNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetWorking.m; sourceTree = "<group>"; };
 		04206ADB1F31B13500DF8762 /* HYWKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYWKViewController.h; sourceTree = "<group>"; };
 		04206ADC1F31B13500DF8762 /* HYWKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYWKViewController.m; sourceTree = "<group>"; };
-		043DF2CF20416C4F00146BF4 /* WMPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WMPlayer.bundle; sourceTree = "<group>"; };
-		043DF2D020416C4F00146BF4 /* WMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPlayer.h; sourceTree = "<group>"; };
-		043DF2D220416C4F00146BF4 /* WMLightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMLightView.h; sourceTree = "<group>"; };
-		043DF2D320416C4F00146BF4 /* FastForwardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastForwardView.h; sourceTree = "<group>"; };
-		043DF2D420416C4F00146BF4 /* FastForwardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FastForwardView.xib; sourceTree = "<group>"; };
-		043DF2D520416C4F00146BF4 /* WMLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMLightView.m; sourceTree = "<group>"; };
-		043DF2D620416C4F00146BF4 /* FastForwardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastForwardView.m; sourceTree = "<group>"; };
-		043DF2D720416C4F00146BF4 /* WMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPlayer.m; sourceTree = "<group>"; };
 		04405E801F4D635200217D16 /* PhotosContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosContainerView.h; sourceTree = "<group>"; };
 		04405E811F4D635200217D16 /* PhotosContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosContainerView.m; sourceTree = "<group>"; };
 		04405E841F4E64D200217D16 /* HYDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDataBase.h; sourceTree = "<group>"; };
 		04405E851F4E64D200217D16 /* HYDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDataBase.m; sourceTree = "<group>"; };
+		04423289205BA17D00ADA061 /* WHWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHWebViewController.m; sourceTree = "<group>"; };
+		0442328A205BA17D00ADA061 /* WHWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHWebViewController.h; sourceTree = "<group>"; };
+		0442328C205BAD4200ADA061 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
+		0442328D205BAD4200ADA061 /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
 		0446CB271F2CD37900B781CF /* HYCustomDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYCustomDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0446CB2B1F2CD37900B781CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0446CB341F2CD37900B781CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -174,6 +169,10 @@
 		049DE368205A50380061B13D /* SingleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleView.h; sourceTree = "<group>"; };
 		049DE369205A50380061B13D /* SingleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleView.m; sourceTree = "<group>"; };
 		049DE36D205A59A20061B13D /* SingleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleView.xib; sourceTree = "<group>"; };
+		049DE373205B66D50061B13D /* UIScrollView+HYEmptyDataSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+HYEmptyDataSet.h"; sourceTree = "<group>"; };
+		049DE374205B66D50061B13D /* UIScrollView+HYEmptyDataSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+HYEmptyDataSet.m"; sourceTree = "<group>"; };
+		049DE376205B67EA0061B13D /* UIScrollView+HYRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+HYRefresh.h"; sourceTree = "<group>"; };
+		049DE377205B67EA0061B13D /* UIScrollView+HYRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+HYRefresh.m"; sourceTree = "<group>"; };
 		049F35B41FA322F600C4F1D7 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		049F35B51FA322F600C4F1D7 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		04A43ED51F302372000DBC7F /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
@@ -298,33 +297,12 @@
 		04206ADA1F31B12200DF8762 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				0442328A205BA17D00ADA061 /* WHWebViewController.h */,
+				04423289205BA17D00ADA061 /* WHWebViewController.m */,
 				04206ADB1F31B13500DF8762 /* HYWKViewController.h */,
 				04206ADC1F31B13500DF8762 /* HYWKViewController.m */,
 			);
 			path = WebView;
-			sourceTree = "<group>";
-		};
-		043DF2CE20416C4F00146BF4 /* WMPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				043DF2D120416C4F00146BF4 /* View */,
-				043DF2CF20416C4F00146BF4 /* WMPlayer.bundle */,
-				043DF2D020416C4F00146BF4 /* WMPlayer.h */,
-				043DF2D720416C4F00146BF4 /* WMPlayer.m */,
-			);
-			path = WMPlayer;
-			sourceTree = "<group>";
-		};
-		043DF2D120416C4F00146BF4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				043DF2D220416C4F00146BF4 /* WMLightView.h */,
-				043DF2D520416C4F00146BF4 /* WMLightView.m */,
-				043DF2D320416C4F00146BF4 /* FastForwardView.h */,
-				043DF2D620416C4F00146BF4 /* FastForwardView.m */,
-				043DF2D420416C4F00146BF4 /* FastForwardView.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		04405E7F1F4D634600217D16 /* CommonView */ = {
@@ -514,6 +492,19 @@
 			path = Third;
 			sourceTree = "<group>";
 		};
+		049DE36F205B5C180061B13D /* Catagory */ = {
+			isa = PBXGroup;
+			children = (
+				0442328C205BAD4200ADA061 /* UIViewController+BackButtonHandler.h */,
+				0442328D205BAD4200ADA061 /* UIViewController+BackButtonHandler.m */,
+				049DE373205B66D50061B13D /* UIScrollView+HYEmptyDataSet.h */,
+				049DE374205B66D50061B13D /* UIScrollView+HYEmptyDataSet.m */,
+				049DE376205B67EA0061B13D /* UIScrollView+HYRefresh.h */,
+				049DE377205B67EA0061B13D /* UIScrollView+HYRefresh.m */,
+			);
+			path = Catagory;
+			sourceTree = "<group>";
+		};
 		049F35B21FA322A700C4F1D7 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,7 +559,7 @@
 		04C4739F1F2CE392005AB420 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				043DF2CE20416C4F00146BF4 /* WMPlayer */,
+				049DE36F205B5C180061B13D /* Catagory */,
 				04D8AC52202991D800401EF7 /* HYCustomView */,
 				041A477720240F3A00FB0EE7 /* CityPicker */,
 				04405E831F4E649E00217D16 /* FMDB */,
@@ -833,12 +824,10 @@
 				0446CB3A1F2CD37900B781CF /* LaunchScreen.storyboard in Resources */,
 				04B4AE91202D371C007BCD9F /* SecneryDetailCell.xib in Resources */,
 				041A476C20240B2400FB0EE7 /* hospital.plist in Resources */,
-				043DF2D820416C4F00146BF4 /* WMPlayer.bundle in Resources */,
 				041A476620240B2400FB0EE7 /* Address.plist in Resources */,
 				041A476720240B2400FB0EE7 /* city.plist in Resources */,
 				04B4AE93202D728C007BCD9F /* scenery_city.plist in Resources */,
 				0446CB371F2CD37900B781CF /* Assets.xcassets in Resources */,
-				043DF2D920416C4F00146BF4 /* FastForwardView.xib in Resources */,
 				049DE36E205A59A20061B13D /* SingleView.xib in Resources */,
 				0446CB351F2CD37900B781CF /* Main.storyboard in Resources */,
 				041A476A20240B2400FB0EE7 /* HospitalCell.xib in Resources */,
@@ -935,7 +924,6 @@
 				04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */,
 				041A476420240B2400FB0EE7 /* LZCityPickerView.m in Sources */,
 				041A477020240B2400FB0EE7 /* HosDetailCell.m in Sources */,
-				043DF2DA20416C4F00146BF4 /* WMLightView.m in Sources */,
 				045D7AF62041636A00B00E16 /* VideoModel.m in Sources */,
 				045D7AE3203FEA1200B00E16 /* HealthCell.m in Sources */,
 				04206ADD1F31B13500DF8762 /* HYWKViewController.m in Sources */,
@@ -944,21 +932,23 @@
 				04A43EF21F307EE5000DBC7F /* NewsPageViewController.m in Sources */,
 				045D7ADD203EC83900B00E16 /* H_TitleModel.m in Sources */,
 				04D8AC69202ACD5D00401EF7 /* SceneryCell.m in Sources */,
+				0442328B205BA17D00ADA061 /* WHWebViewController.m in Sources */,
 				04D8AC5820299CB000401EF7 /* HYGetParameter.m in Sources */,
 				04A43EEC1F307AC0000DBC7F /* NewsCell.m in Sources */,
 				04B4AE86202C3095007BCD9F /* MyPictureCell.m in Sources */,
 				04D8AC5120298AC800401EF7 /* NewsViewController.m in Sources */,
-				043DF2DB20416C4F00146BF4 /* FastForwardView.m in Sources */,
 				0484CF84204E40C2002CB1F6 /* WSLNativeScanTool.m in Sources */,
 				041A476520240B2400FB0EE7 /* LZPickerModel.m in Sources */,
 				04D8AC4D2029890800401EF7 /* RootViewController.m in Sources */,
 				04D8AC55202991FB00401EF7 /* HYButton.m in Sources */,
+				049DE378205B67EA0061B13D /* UIScrollView+HYRefresh.m in Sources */,
 				041A476B20240B2400FB0EE7 /* HospitalCell.m in Sources */,
 				041A476E20240B2400FB0EE7 /* HosDetailViewController.m in Sources */,
+				049DE375205B66D50061B13D /* UIScrollView+HYEmptyDataSet.m in Sources */,
 				049F35B61FA322F600C4F1D7 /* HomeViewController.m in Sources */,
 				045D7AD9203EC25F00B00E16 /* HealthyViewController.m in Sources */,
-				043DF2DC20416C4F00146BF4 /* WMPlayer.m in Sources */,
 				04B4AE90202D371C007BCD9F /* SecneryDetailCell.m in Sources */,
+				0442328E205BAD4300ADA061 /* UIViewController+BackButtonHandler.m in Sources */,
 				041A477420240B5200FB0EE7 /* HYNetWorking.m in Sources */,
 				0458F9FD202BF6DC004925AF /* SceneryDetailVC.m in Sources */,
 				041A476820240B2400FB0EE7 /* LZCityPickerController.m in Sources */,

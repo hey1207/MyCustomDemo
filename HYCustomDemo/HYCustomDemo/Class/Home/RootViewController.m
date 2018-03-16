@@ -24,6 +24,13 @@
     self.navigationItem.backBarButtonItem = bar;
     //导航栏字体颜色
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                   initWithTitle: @""
+                                   style:UIBarButtonItemStylePlain
+                                   target:self
+                                   action:@selector(home)];
+    self.navigationItem.backBarButtonItem = backButton;
 }
 
 

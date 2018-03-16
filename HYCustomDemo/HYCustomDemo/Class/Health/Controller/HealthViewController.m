@@ -59,11 +59,17 @@
     // 分段样式属性工具
     MJCSegmentStylesTools *tools = [MJCSegmentStylesTools jc_initWithSegmentStylestoolsBlock:^(MJCSegmentStylesTools *jc_tools) {
         jc_tools.jc_titleBarStyles(MJCTitlesScrollStyle).
-        jc_titlesViewFrame(CGRectMake(0, 0, self.view.jc_width,30));
+        jc_titlesViewFrame(CGRectMake(0, 0, self.view.jc_width,40));
         jc_tools.ItemDefaultShowCount = 6;
         jc_tools.childScollEnabled = YES;
         jc_tools.indicatorFollowEnabled = YES;
+        jc_tools.itemTextGradientEnabled = YES; //滑动渐变
+        //这个SB第三方库，使用了readonly属性，使用KVC赋值
+        [jc_tools setValue:[UIColor darkGrayColor] forKey:@"itemTextNormalColor"];
+        [jc_tools setValue:[UIColor redColor] forKey:@"itemTextSelectedColor"];
+        [jc_tools setValue:@"16" forKey:@"itemTextFontSize"];
     }];
+
     MJCSegmentInterface *interFace = [MJCSegmentInterface initWithFrame:CGRectMake(0,64,self.view.jc_width, self.view.jc_height-64) interFaceStyletools:tools];
     interFace.delegate = self;
     [self.view addSubview:interFace];

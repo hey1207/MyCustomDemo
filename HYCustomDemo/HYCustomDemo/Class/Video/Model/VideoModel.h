@@ -10,6 +10,7 @@
 @class V_List,V_Video,V_U;
 
 @interface VideoModel : NSObject
+@property (nonatomic,strong) NSDictionary *info; //np
 @property (nonatomic,strong) NSArray <V_List *> *list;
 @end
 

@@ -13,6 +13,8 @@
 @interface HealthyViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *mainTableView;
 @property (nonatomic,strong) NSMutableArray *modelArray;
+
+@property (nonatomic,assign) NSInteger currentPage;
 @end
 
 @implementation HealthyViewController
@@ -21,21 +23,45 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-    [self loadData];
+    self.currentPage = 1;
+    [self loadDataWithPage:self.currentPage];
     
     [self.view addSubview:self.mainTableView];
     self.mainTableView.sd_layout.leftSpaceToView(self.view, 0).topSpaceToView(self.view, 0).rightSpaceToView(self.view, 0).bottomSpaceToView(self.view, 0);
+    
+    //空白页
+    [self.mainTableView setupEmptyDataText:@"木有更多数据" verticalOffset:30 emptyImage:[UIImage imageNamed:@"none"] tapBlock:^{
+        [self loadDataWithPage:1];
+    }];
+    //刷新
+    __weak typeof(self) weakself = self;
+    [self.mainTableView setRefreshWithHeaderBlock:^{
+        weakself.currentPage = 1;
+        [weakself.modelArray removeAllObjects];
+        [weakself loadDataWithPage:weakself.currentPage];
+    } footerBlock:^{
+        weakself.currentPage ++;
+        [weakself loadDataWithPage:weakself.currentPage];
+    }];
 }
--(void)loadData{
-    NSDictionary *param = [NSDictionary dictionaryWithObject:self.titleStr forKey:@"tid"];
+-(void)loadDataWithPage:(NSInteger)page{
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
+    [parameter setObject:self.titleStr forKey:@"tid"];
+    [parameter setObject:[NSString stringWithFormat:@"%ld",page] forKey:@"page"];
+    
     [LCProgressHUD showLoading:@""];
-    [[HYDataService sharedClient] requestWithUrlString:Health_Search_Url parameters:param method:REQUEST_METHOD_POST success:^(id response, NSError *error) {
+    [[HYDataService sharedClient] requestWithUrlString:Health_Search_Url parameters:parameter method:REQUEST_METHOD_POST success:^(id response, NSError *error) {
+        [LCProgressHUD hide];
+        [self.mainTableView footerEndRefreshing];
+        [self.mainTableView headerEndRefreshing];
+        
         HealthModel *healthModel = [HealthModel mj_objectWithKeyValues:response[@"pagebean"]];
         [self.modelArray addObjectsFromArray:healthModel.contentlist];
-        [LCProgressHUD hide];
         [self.mainTableView reloadData];
     } failure:^(NSError *error) {
-        
+        [LCProgressHUD hide];
+        [self.mainTableView footerEndRefreshing];
+        [self.mainTableView headerEndRefreshing];
     }];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -53,9 +79,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     H_contentlist *list = self.modelArray[indexPath.row];
     
-    HYWKViewController *myWKWebView = [[HYWKViewController alloc] init];
-    [self.navigationController pushViewController:myWKWebView animated:YES];
-    [myWKWebView loadRequestWithUrlString:list.wapurl methodStyle:METHOD_STYLE_WKWebView];
+//    HYWKViewController *myWKWebView = [[HYWKViewController alloc] init];
+//    [self.navigationController pushViewController:myWKWebView animated:YES];
+//    [myWKWebView loadRequestWithUrlString:list.wapurl methodStyle:METHOD_STYLE_WKWebView];
+    
+    WHWebViewController *whWebView = [[WHWebViewController alloc] init];
+    whWebView.urlString = list.wapurl;
+    [self.navigationController pushViewController:whWebView animated:YES];
+    
 }
 -(UITableView *)mainTableView{
     if (!_mainTableView) {
@@ -64,8 +95,7 @@
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.tableFooterView = [UIView new];
-        _mainTableView.rowHeight = UITableViewAutomaticDimension; // 自适应单元格高度
-        _mainTableView.estimatedRowHeight = 50; //先估计一个高度
+        _mainTableView.rowHeight = 90; 
     }
     return _mainTableView;
 }

@@ -7,7 +7,6 @@
 //
 
 #import "BSBaseViewController.h"
-#import "VideoModel.h"
 #import "BSTotalModel.h"
 
 #import "BSTextCell.h"
@@ -87,7 +86,6 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BS_List *list = self.modelArray[indexPath.row];
-    NSLog(@"-------------------- %ld 行",indexPath.row);
     if ([list.type isEqualToString:@"text"]) {
         BSTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier" forIndexPath:indexPath];
         cell.list = list;
@@ -162,37 +160,15 @@
     }
 }
 -(void)tapBigViewAction{
+    [self performSelector:@selector(removeBigScrollView) withObject:nil afterDelay:0.2f];
     [UIView animateWithDuration:0.2f animations:^{
         _bigScrollView.alpha = 0;
     }];
-    [self performSelector:@selector(removeBigScrollView) withObject:nil afterDelay:0.2f];
 }
 -(void)removeBigScrollView{
     [_bigScrollView removeFromSuperview];
 }
 
--(UITableView *)mainTableView{
-    if (!_mainTableView) {
-        _mainTableView = [[UITableView alloc] init];
-        _mainTableView.backgroundColor = [UIColor whiteColor];
-        _mainTableView.delegate = self;
-        _mainTableView.dataSource = self;
-        _mainTableView.tableFooterView = [UIView new];
-        _mainTableView.rowHeight = UITableViewAutomaticDimension; // 自适
-        _mainTableView.estimatedRowHeight = 50; //先估计一个高度
-        [_mainTableView registerNib:[UINib nibWithNibName:@"BSTextCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"identifier"];
-        [_mainTableView registerNib:[UINib nibWithNibName:@"VideoCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"VideoCell"];
-        [_mainTableView registerNib:[UINib nibWithNibName:@"BSImageCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BSImageCell"];
-        [_mainTableView registerNib:[UINib nibWithNibName:@"BSGifCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BSGifCell"];
-    }
-    return _mainTableView;
-}
--(NSMutableArray *)modelArray{
-    if(!_modelArray){
-        _modelArray = [NSMutableArray array];
-    }
-    return _modelArray;
-}
 
 #pragma mark ----------------------------------- 视频相关 ---------------------------------------
 - (ZFPlayerView *)playerView {
@@ -219,21 +195,38 @@
     return _playerView;
 }
 
+#pragma mark ----------------------------------- 懒加载初始化 ---------------------------------------
+-(UITableView *)mainTableView{
+    if (!_mainTableView) {
+        _mainTableView = [[UITableView alloc] init];
+        _mainTableView.backgroundColor = [UIColor whiteColor];
+        _mainTableView.delegate = self;
+        _mainTableView.dataSource = self;
+        _mainTableView.tableFooterView = [UIView new];
+        _mainTableView.rowHeight = UITableViewAutomaticDimension; // 自适
+        _mainTableView.estimatedRowHeight = 50; //先估计一个高度
+        [_mainTableView registerNib:[UINib nibWithNibName:@"BSTextCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"identifier"];
+        [_mainTableView registerNib:[UINib nibWithNibName:@"VideoCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"VideoCell"];
+        [_mainTableView registerNib:[UINib nibWithNibName:@"BSImageCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BSImageCell"];
+        [_mainTableView registerNib:[UINib nibWithNibName:@"BSGifCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BSGifCell"];
+    }
+    return _mainTableView;
+}
+-(NSMutableArray *)modelArray{
+    if(!_modelArray){
+        _modelArray = [NSMutableArray array];
+    }
+    return _modelArray;
+}
 - (ZFPlayerControlView *)controlView {
     if (!_controlView) {
         _controlView = [[ZFPlayerControlView alloc] init];
     }
     return _controlView;
 }
-#pragma mark - ZFPlayerControlViewDelagate
--(void)zf_controlView:(UIView *)controlView closeAction:(UIButton *)sender{
-    NSLog(@"123");
-}
 
-// 页面消失时候
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
     [self.playerView resetPlayer];
 }
 - (void)didReceiveMemoryWarning {

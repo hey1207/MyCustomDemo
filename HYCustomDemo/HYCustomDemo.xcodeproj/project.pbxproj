@@ -39,10 +39,8 @@
 		045D7AE3203FEA1200B00E16 /* HealthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AE1203FEA1200B00E16 /* HealthCell.m */; };
 		045D7AE4203FEA1200B00E16 /* HealthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045D7AE2203FEA1200B00E16 /* HealthCell.xib */; };
 		045D7AE7203FEE0700B00E16 /* HealthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AE6203FEE0700B00E16 /* HealthModel.m */; };
-		045D7AEB2040115900B00E16 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AEA2040115900B00E16 /* VideoViewController.m */; };
 		045D7AF22041551300B00E16 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AF02041551300B00E16 /* VideoCell.m */; };
 		045D7AF32041551300B00E16 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045D7AF12041551300B00E16 /* VideoCell.xib */; };
-		045D7AF62041636A00B00E16 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D7AF52041636A00B00E16 /* VideoModel.m */; };
 		0484CF83204E40C2002CB1F6 /* WSLScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF80204E40C1002CB1F6 /* WSLScanView.m */; };
 		0484CF84204E40C2002CB1F6 /* WSLNativeScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF81204E40C1002CB1F6 /* WSLNativeScanTool.m */; };
 		0484CF88204E40F5002CB1F6 /* HYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF87204E40F5002CB1F6 /* HYCodeViewController.m */; };
@@ -174,13 +172,9 @@
 		045D7AE2203FEA1200B00E16 /* HealthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthCell.xib; sourceTree = "<group>"; };
 		045D7AE5203FEE0700B00E16 /* HealthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthModel.h; sourceTree = "<group>"; };
 		045D7AE6203FEE0700B00E16 /* HealthModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthModel.m; sourceTree = "<group>"; };
-		045D7AE92040115900B00E16 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
-		045D7AEA2040115900B00E16 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		045D7AEF2041551300B00E16 /* VideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
 		045D7AF02041551300B00E16 /* VideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
 		045D7AF12041551300B00E16 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
-		045D7AF42041636A00B00E16 /* VideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
-		045D7AF52041636A00B00E16 /* VideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
 		0484CF7F204E40C1002CB1F6 /* WSLNativeScanTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLNativeScanTool.h; sourceTree = "<group>"; };
 		0484CF80204E40C1002CB1F6 /* WSLScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLScanView.m; sourceTree = "<group>"; };
 		0484CF81204E40C1002CB1F6 /* WSLNativeScanTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLNativeScanTool.m; sourceTree = "<group>"; };
@@ -492,44 +486,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		045D7AE82040114000B00E16 /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				045D7AEE2041530700B00E16 /* View */,
-				045D7AED204152FF00B00E16 /* Controller */,
-				045D7AEC204152F900B00E16 /* Model */,
-			);
-			path = Video;
-			sourceTree = "<group>";
-		};
-		045D7AEC204152F900B00E16 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				045D7AF42041636A00B00E16 /* VideoModel.h */,
-				045D7AF52041636A00B00E16 /* VideoModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		045D7AED204152FF00B00E16 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				045D7AE92040115900B00E16 /* VideoViewController.h */,
-				045D7AEA2040115900B00E16 /* VideoViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		045D7AEE2041530700B00E16 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				045D7AEF2041551300B00E16 /* VideoCell.h */,
-				045D7AF02041551300B00E16 /* VideoCell.m */,
-				045D7AF12041551300B00E16 /* VideoCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		0484CF7E204E40A2002CB1F6 /* Code */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +565,9 @@
 		04A32AD1205E40AA00E7FB62 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				045D7AEF2041551300B00E16 /* VideoCell.h */,
+				045D7AF02041551300B00E16 /* VideoCell.m */,
+				045D7AF12041551300B00E16 /* VideoCell.xib */,
 				04A32AD2205E40D800E7FB62 /* BSTextCell.h */,
 				04A32AD3205E40D800E7FB62 /* BSTextCell.m */,
 				04A32AD4205E40D800E7FB62 /* BSTextCell.xib */,
@@ -752,7 +711,6 @@
 			children = (
 				04A32ABA205D50D600E7FB62 /* 百思不得姐 */,
 				0484CF7E204E40A2002CB1F6 /* Code */,
-				045D7AE82040114000B00E16 /* Video */,
 				045D7AD0203EB6F100B00E16 /* Health */,
 				04D8AC592029AE1900401EF7 /* Scenery */,
 				04D8AC4E202989D000401EF7 /* Home */,
@@ -1074,7 +1032,6 @@
 				04A43EE61F306DC0000DBC7F /* NewsModel.m in Sources */,
 				041A476420240B2400FB0EE7 /* LZCityPickerView.m in Sources */,
 				041A477020240B2400FB0EE7 /* HosDetailCell.m in Sources */,
-				045D7AF62041636A00B00E16 /* VideoModel.m in Sources */,
 				045D7AE3203FEA1200B00E16 /* HealthCell.m in Sources */,
 				04206ADD1F31B13500DF8762 /* HYWKViewController.m in Sources */,
 				04A32ADA205E42AB00E7FB62 /* BSTotalModel.m in Sources */,
@@ -1119,7 +1076,6 @@
 				04A43EEF1F307BC8000DBC7F /* NewsTableView.m in Sources */,
 				04D8AC4A202988D300401EF7 /* AppDelegate.m in Sources */,
 				045D7AF22041551300B00E16 /* VideoCell.m in Sources */,
-				045D7AEB2040115900B00E16 /* VideoViewController.m in Sources */,
 				04D8AC49202988D300401EF7 /* ViewController.m in Sources */,
 				045D7AD3203EB72B00B00E16 /* HealthViewController.m in Sources */,
 				041A476920240B2400FB0EE7 /* HospitalViewController.m in Sources */,

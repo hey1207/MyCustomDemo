@@ -11,8 +11,8 @@
 @implementation VideoCell
 
 
--(void)setList:(V_List *)list{
-    V_U *u = list.u;
+-(void)setList:(BS_List *)list{
+    BS_U *u = list.u;
     NSString *iconStr = [u.header firstObject];
     [self.iconImageVIew sd_setImageWithURL:[NSURL URLWithString:iconStr] placeholderImage:[UIImage imageNamed:@"head-default"]];
     
@@ -21,7 +21,7 @@
     
     self.centerLabel.text = list.text;
     
-    V_Video *video = list.video;
+    BS_Video *video = list.video;
     
     self.imageHeight.constant = (CGFloat)video.height/video.width * Main_Screen_Width;
     [self layoutIfNeeded];

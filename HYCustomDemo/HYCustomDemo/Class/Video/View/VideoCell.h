@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VideoModel.h"
+#import "BSTotalModel.h"
 
 typedef void(^ClickPlayButtonBlock)(void);
 
@@ -24,6 +24,6 @@ typedef void(^ClickPlayButtonBlock)(void);
 
 @property (nonatomic,copy) ClickPlayButtonBlock clickPlayButtonBlock;
 
-@property (nonatomic,strong) V_List *list;
+@property (nonatomic,strong) BS_List *list;
 
 @end

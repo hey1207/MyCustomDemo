@@ -13,6 +13,7 @@
 #import "HealthViewController.h"
 #import "VideoViewController.h"
 #import "HYCodeViewController.h"
+#import "BSHomeViewController.h"
 
 #import "SingleView.h"
 
@@ -31,8 +32,8 @@
     NSInteger count = 4;
     CGFloat buttonWidth = (Main_Screen_Width-2*leftMargin-2*centerMargin)/count;
     CGFloat buttonHeight = buttonWidth;
-    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"健康知识",@"小视频"];
-    NSArray *imgArray = @[@"home_news",@"home_hospital",@"home_scenery",@"home_health",@"home_video"];
+    NSArray *titleArray = @[@"新闻",@"医院",@"景点",@"健康知识",@"小视频",@"百思不得姐"];
+    NSArray *imgArray = @[@"home_news",@"home_hospital",@"home_scenery",@"home_health",@"home_video",@"home_bs"];
     
     for (int i = 0; i<titleArray.count; i++) {
         SingleView *singleView = [[NSBundle mainBundle] loadNibNamed:@"SingleView" owner:self options:nil].firstObject;
@@ -82,6 +83,9 @@
         case 5:{
             //            HYCodeViewController *codeVC = [[HYCodeViewController alloc] init];
             //            [self.navigationController pushViewController:codeVC animated:YES];
+            
+            BSHomeViewController *homeVC = [BSHomeViewController new];
+            [self.navigationController pushViewController:homeVC animated:YES];
         }
             break;
         default:

@@ -80,7 +80,7 @@
     __weak VideoCell *cell = (VideoCell *)[[[NSBundle mainBundle] loadNibNamed:@"VideoCell" owner:self options:nil] lastObject];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     V_List *list = self.modelArray[indexPath.row];
-    cell.list = list;
+//    cell.list = list;
     cell.clickPlayButtonBlock = ^{
         [cell.playButton removeFromSuperview];
         ZFPlayerModel *playerModel = [[ZFPlayerModel alloc] init];

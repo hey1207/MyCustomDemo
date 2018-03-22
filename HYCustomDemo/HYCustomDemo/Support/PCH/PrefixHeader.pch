@@ -29,6 +29,8 @@
 #import "HYDataService.h"
 
 #import "RootViewController.h"
+#import "BSBaseViewController.h"
+
 //webView
 #import "HYWKViewController.h"
 #import "WHWebViewController.h"

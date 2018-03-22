@@ -19,5 +19,6 @@ pod 'Masonry'
 pod 'NJKWebViewProgress'
 pod 'ZFPlayer'
 pod 'ZFDownload'
+pod 'FLAnimatedImage'
 
 end

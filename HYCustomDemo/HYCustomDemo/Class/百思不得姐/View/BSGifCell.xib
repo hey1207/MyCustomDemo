@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="BSGifCell" selectionStyle="default" indentationWidth="10" rowHeight="212" id="KGk-i7-Jjw" customClass="BSGifCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="212"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="211.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMQ-ES-hTX">
+                        <rect key="frame" x="66" y="33" width="244" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="wjr-d7-aoQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR3-fg-SGs">
+                        <rect key="frame" x="66" y="10" width="244" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="CtK-mB-vk9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.01289670698" green="0.68756071890000003" blue="0.00079359204600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bev-82-c8I">
+                        <rect key="frame" x="10" y="10" width="46" height="46"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="jv7-EY-6E2"/>
+                            <constraint firstAttribute="height" constant="46" id="uln-wm-ULx"/>
+                        </constraints>
+                    </imageView>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vBJ-bf-1UY">
+                        <rect key="frame" x="10" y="66" width="300" height="136"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="136" id="9nT-VD-Ib0"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="iPr-aU-BiG">
+                        <rect key="frame" x="10" y="66" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="HIF-OA-6hT"/>
+                            <constraint firstAttribute="width" constant="40" id="YkA-1D-WQt"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vBJ-bf-1UY" secondAttribute="trailing" constant="10" id="AA9-BD-eUa"/>
+                    <constraint firstItem="xR3-fg-SGs" firstAttribute="leading" secondItem="Bev-82-c8I" secondAttribute="trailing" constant="10" id="ELO-uK-8am"/>
+                    <constraint firstItem="Bev-82-c8I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="EWj-Lo-6by"/>
+                    <constraint firstAttribute="trailing" secondItem="xR3-fg-SGs" secondAttribute="trailing" constant="10" id="LrN-Zr-XE0"/>
+                    <constraint firstItem="iPr-aU-BiG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="QOB-x5-pnf"/>
+                    <constraint firstAttribute="bottom" secondItem="vBJ-bf-1UY" secondAttribute="bottom" constant="10" id="QnJ-1b-hWd"/>
+                    <constraint firstItem="vBJ-bf-1UY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="S93-Y6-k4n"/>
+                    <constraint firstItem="vBJ-bf-1UY" firstAttribute="top" secondItem="jMQ-ES-hTX" secondAttribute="bottom" constant="10" id="Vhw-d6-U5b"/>
+                    <constraint firstItem="iPr-aU-BiG" firstAttribute="top" secondItem="Bev-82-c8I" secondAttribute="bottom" constant="10" id="WEN-iJ-ZlE"/>
+                    <constraint firstAttribute="trailing" secondItem="jMQ-ES-hTX" secondAttribute="trailing" constant="10" id="bjK-V1-ddX"/>
+                    <constraint firstItem="Bev-82-c8I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="f7A-kE-oyo"/>
+                    <constraint firstItem="jMQ-ES-hTX" firstAttribute="leading" secondItem="Bev-82-c8I" secondAttribute="trailing" constant="10" id="g98-73-zh9"/>
+                    <constraint firstItem="xR3-fg-SGs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gQt-1E-nh7"/>
+                    <constraint firstItem="jMQ-ES-hTX" firstAttribute="top" secondItem="xR3-fg-SGs" secondAttribute="bottom" id="w3X-va-N1W"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="gifImageView" destination="vBJ-bf-1UY" id="lEk-Br-EZF"/>
+                <outlet property="iconImageView" destination="Bev-82-c8I" id="abb-bD-8OV"/>
+                <outlet property="imageHeight" destination="9nT-VD-Ib0" id="hcs-Uq-sz0"/>
+                <outlet property="nameLabel" destination="xR3-fg-SGs" id="rwm-aQ-2OT"/>
+                <outlet property="timeLabel" destination="jMQ-ES-hTX" id="iVI-0F-dJd"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="138"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="common-gif" width="31" height="31"/>
+    </resources>
+</document>

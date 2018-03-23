@@ -12,6 +12,7 @@
 
 @implementation BSGifCell{
     ZXYSectorProgress *_progress;
+    BOOL _isDownloading;
 }
 
 -(void)setList:(BS_List *)list{
@@ -22,6 +23,8 @@
     
     self.nameLabel.text = u.name.length>0?u.name:@"未命名用户";
     self.timeLabel.text = [Tools compareCurrentTime:list.passtime];
+    
+    self.detailLabel.text = list.text;
     
     BS_Gif *gif = list.gif;
     
@@ -34,6 +37,9 @@
     [self.gifImageView addGestureRecognizer:tap];
 }
 -(void)tapGifView:(UITapGestureRecognizer *)tap{
+    if (_isDownloading) {
+        return;
+    }
     _progress = [[ZXYSectorProgress alloc] initWithFrame:CGRectMake(0, 0, 50, 50) progress:0];
     _progress.fillColor = [UIColor lightGrayColor];
     [self.gifImageView addSubview:_progress];
@@ -44,11 +50,13 @@
     BS_Gif *gif = self.list.gif;
     
     [[SDWebImageManager sharedManager]loadImageWithURL:[NSURL URLWithString:gif.images.firstObject] options:SDWebImageContinueInBackground progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+        _isDownloading = YES;
         NSLog(@"------%f",(CGFloat)receivedSize/expectedSize);
         dispatch_async(dispatch_get_main_queue(), ^{
             _progress.progress = (CGFloat)receivedSize/expectedSize;
         });
     } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+        _isDownloading = NO;
         [_progress removeFromSuperview];
         FLAnimatedImage *gifImage = [FLAnimatedImage animatedImageWithGIFData:data];
         dispatch_async(dispatch_get_main_queue(), ^{

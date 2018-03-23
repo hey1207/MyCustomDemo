@@ -11,6 +11,7 @@
 
 @implementation BSImageCell{
     ZXYSectorProgress *_progress;
+    BOOL _isDownloading;
 }
 
 -(void)setList:(BS_List *)list{
@@ -22,28 +23,49 @@
     self.nameLabel.text = u.name.length>0?u.name:@"未命名用户";
     self.timeLabel.text = [Tools compareCurrentTime:list.passtime];
     
-    BS_Image *image = list.image;
+    self.detailLabel.text = list.text;
     
-    if ((CGFloat)image.height/image.width>1.5) {
-        self.longPicLabel.hidden = NO;
-        self.imageWidth.constant = 250;
-        self.imageHeight.constant = 250;
-        [self.bottomImageView sd_setImageWithURL:[NSURL URLWithString:image.thumbnail_small.firstObject] placeholderImage:nil];
+    BS_Image *bsImage = list.image;
+    
+    if ((CGFloat)bsImage.height/bsImage.width>1.2) {
+        self.seeLongPicButton.hidden = NO;
+        self.imageHeight.constant = 300;
         
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImageAction)];
+        //长图处理,只显示顶部
+        //第一步
+        self.bottomImageView.contentMode = UIViewContentModeTop;
+        self.bottomImageView.clipsToBounds = YES;
+        
+        [self.bottomImageView sd_setImageWithURL:[NSURL URLWithString:bsImage.big.firstObject] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            //第二步
+            CGFloat imageH = bsImage.width > 0 && bsImage.height > 0 ? Main_Screen_Width * bsImage.height/bsImage.width : 300;
+            UIGraphicsBeginImageContextWithOptions(CGSizeMake(Main_Screen_Width, Main_Screen_Height),0, [UIScreen mainScreen].scale);
+            [self.bottomImageView.image drawInRect:CGRectMake(0, 0, Main_Screen_Width, imageH)];
+            self.bottomImageView.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+        }];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeLongPicButtonAction:)];
         [self.bottomImageView addGestureRecognizer:tap];
         
     }else{
-        self.longPicLabel.hidden = YES;
-        self.imageWidth.constant = Main_Screen_Width-20;
-        self.imageHeight.constant = (CGFloat)image.height/image.width * (Main_Screen_Width-20);
-        [self.bottomImageView sd_setImageWithURL:[NSURL URLWithString:image.big.firstObject] placeholderImage:nil];
+        self.bottomImageView.contentMode = UIViewContentModeScaleToFill;
+        self.bottomImageView.clipsToBounds = NO;
+        
+        self.seeLongPicButton.hidden = YES;
+        
+        self.imageHeight.constant = (CGFloat)bsImage.height/bsImage.width * (Main_Screen_Width-20);
+        [self.bottomImageView sd_setImageWithURL:[NSURL URLWithString:bsImage.big.firstObject] placeholderImage:nil];
     }
     [self layoutIfNeeded];
     
 }
--(void)tapImageAction{
-    NSLog(@"点击了长图");
+- (IBAction)seeLongPicButtonAction:(id)sender {
+    NSLog(@"点击了查看长图");
+    
+    if (_isDownloading) {
+        return;
+    }
     
     _progress = [[ZXYSectorProgress alloc] initWithFrame:CGRectMake(0, 0, 50, 50) progress:0];
     _progress.fillColor = [UIColor lightGrayColor];
@@ -55,17 +77,19 @@
     BS_Image *image = self.list.image;
     
     [[SDWebImageManager sharedManager]loadImageWithURL:[NSURL URLWithString:image.big.firstObject] options:SDWebImageContinueInBackground progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
-        NSLog(@"------%f",(CGFloat)receivedSize/expectedSize);
+        _isDownloading = YES;
         dispatch_async(dispatch_get_main_queue(), ^{
             _progress.progress = (CGFloat)receivedSize/expectedSize;
         });
     } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+        _isDownloading = NO;
         [_progress removeFromSuperview];
         if (self.downloadImageBlock) {
             self.downloadImageBlock(image);
         }
     }];
 }
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];

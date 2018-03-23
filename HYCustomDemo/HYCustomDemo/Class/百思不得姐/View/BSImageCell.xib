@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="BSImageCell" selectionStyle="default" indentationWidth="10" rowHeight="165" id="KGk-i7-Jjw" customClass="BSImageCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="BSImageCell" selectionStyle="default" indentationWidth="10" rowHeight="225" id="KGk-i7-Jjw" customClass="BSImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="164.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="224.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLm-LH-WpI">
@@ -38,10 +38,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m30-s6-kj7">
-                        <rect key="frame" x="10" y="66" width="300" height="88.5"/>
+                        <rect key="frame" x="10" y="126" width="300" height="89"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="88.5" id="V6M-ln-gKN"/>
-                            <constraint firstAttribute="width" constant="300" id="xok-ny-LNe"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hPC-21-X5x">
@@ -51,45 +50,60 @@
                             <constraint firstAttribute="width" constant="46" id="aJ7-Xf-vvG"/>
                         </constraints>
                     </imageView>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="长图" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-xj-0iY">
-                        <rect key="frame" x="10" y="134" width="40" height="20"/>
-                        <color key="backgroundColor" red="0.58254783611637495" green="0.76532257267111681" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="aa9-EZ-F8e"/>
-                            <constraint firstAttribute="width" constant="40" id="fdN-KE-2MT"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYs-JV-6av">
+                        <rect key="frame" x="10" y="66" width="300" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oy-X4-vNz">
+                        <rect key="frame" x="10" y="180" width="300" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="5uD-hp-ih7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title="  点击查看长图" image="see_longPic" backgroundImage="bg_longPic"/>
+                        <connections>
+                            <action selector="seeLongPicButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RCI-f0-yJW"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="m30-s6-kj7" firstAttribute="top" secondItem="hPC-21-X5x" secondAttribute="bottom" constant="10" id="0iR-s4-3YX"/>
+                    <constraint firstAttribute="trailing" secondItem="0oy-X4-vNz" secondAttribute="trailing" constant="10" id="1uC-4h-h24"/>
+                    <constraint firstItem="VYs-JV-6av" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="2E5-1V-5AV"/>
+                    <constraint firstAttribute="trailing" secondItem="m30-s6-kj7" secondAttribute="trailing" constant="10" id="5Pp-7N-h2s"/>
                     <constraint firstItem="aqD-sb-TWq" firstAttribute="leading" secondItem="hPC-21-X5x" secondAttribute="trailing" constant="10" id="C92-td-rcQ"/>
+                    <constraint firstItem="m30-s6-kj7" firstAttribute="top" secondItem="VYs-JV-6av" secondAttribute="bottom" constant="10" id="CbT-nE-igz"/>
                     <constraint firstItem="hPC-21-X5x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="LCY-da-j8g"/>
                     <constraint firstAttribute="bottom" secondItem="m30-s6-kj7" secondAttribute="bottom" constant="10" id="N6o-ta-2av"/>
                     <constraint firstItem="LLm-LH-WpI" firstAttribute="leading" secondItem="hPC-21-X5x" secondAttribute="trailing" constant="10" id="Ng9-nh-qbU"/>
+                    <constraint firstAttribute="bottom" secondItem="0oy-X4-vNz" secondAttribute="bottom" constant="10" id="XBM-Ay-WiK"/>
                     <constraint firstAttribute="trailing" secondItem="LLm-LH-WpI" secondAttribute="trailing" constant="10" id="ZpY-zz-4dx"/>
                     <constraint firstItem="hPC-21-X5x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="hU9-ZU-SsO"/>
                     <constraint firstItem="aqD-sb-TWq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hd7-Rd-SRK"/>
-                    <constraint firstItem="IpT-xj-0iY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lUR-UN-l0E"/>
+                    <constraint firstItem="VYs-JV-6av" firstAttribute="top" secondItem="LLm-LH-WpI" secondAttribute="bottom" constant="10" id="jI6-Jn-22G"/>
                     <constraint firstAttribute="trailing" secondItem="aqD-sb-TWq" secondAttribute="trailing" constant="10" id="mLP-p7-mCG"/>
+                    <constraint firstItem="0oy-X4-vNz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nE1-eK-3DV"/>
+                    <constraint firstAttribute="trailing" secondItem="VYs-JV-6av" secondAttribute="trailing" constant="10" id="oW3-y7-lgc"/>
                     <constraint firstItem="LLm-LH-WpI" firstAttribute="top" secondItem="aqD-sb-TWq" secondAttribute="bottom" id="qYe-QH-jdC"/>
-                    <constraint firstAttribute="bottom" secondItem="IpT-xj-0iY" secondAttribute="bottom" constant="10" id="rbd-0h-JYa"/>
                     <constraint firstItem="m30-s6-kj7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xdq-qe-WNI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="bottomImageView" destination="m30-s6-kj7" id="cJ4-fE-Ufa"/>
+                <outlet property="detailLabel" destination="VYs-JV-6av" id="t3h-ic-kbf"/>
                 <outlet property="iconImageView" destination="hPC-21-X5x" id="pub-lc-Jyt"/>
                 <outlet property="imageHeight" destination="V6M-ln-gKN" id="lDi-2D-yWd"/>
-                <outlet property="imageWidth" destination="xok-ny-LNe" id="CQ8-MH-Zgi"/>
-                <outlet property="longPicLabel" destination="IpT-xj-0iY" id="Md5-hA-oQ0"/>
                 <outlet property="nameLabel" destination="aqD-sb-TWq" id="5D5-9p-0FJ"/>
+                <outlet property="seeLongPicButton" destination="0oy-X4-vNz" id="huW-mz-5R4"/>
                 <outlet property="timeLabel" destination="LLm-LH-WpI" id="cq5-Lc-Tvi"/>
             </connections>
-            <point key="canvasLocation" x="-47" y="98.5"/>
+            <point key="canvasLocation" x="-194" y="54.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="bg_longPic" width="285" height="43"/>
+        <image name="see_longPic" width="19" height="19"/>
+    </resources>
 </document>

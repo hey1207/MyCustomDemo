@@ -15,11 +15,11 @@ typedef void(^DownloadImageBlock)(UIImage *);
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomImageView;
-@property (weak, nonatomic) IBOutlet UILabel *longPicLabel;
+@property (weak, nonatomic) IBOutlet UIButton *seeLongPicButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeight;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageWidth;
 
 @property (nonatomic,strong) BS_List *list;
 

@@ -87,13 +87,19 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BS_List *list = self.modelArray[indexPath.row];
     if ([list.type isEqualToString:@"text"]) {
-        BSTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier" forIndexPath:indexPath];
+        BSTextCell *cell = (BSTextCell *)[tableView dequeueReusableCellWithIdentifier:@"BSTextCell"];
+        if (cell == nil) {
+            cell= (BSTextCell *)[[[NSBundle  mainBundle]  loadNibNamed:@"BSTextCell" owner:self options:nil] lastObject];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
         cell.list = list;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if ([list.type isEqualToString:@"image"]){
-        BSImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BSImageCell" forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        BSImageCell *cell = (BSImageCell *)[tableView dequeueReusableCellWithIdentifier:@"BSImageCell"];
+        if (cell == nil) {
+            cell= (BSImageCell *)[[[NSBundle  mainBundle]  loadNibNamed:@"BSImageCell" owner:self options:nil] lastObject];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
         cell.list = list;
         BS_Image *image = list.image;
         cell.downloadImageBlock = ^(UIImage *bigImage) {
@@ -114,12 +120,19 @@
         };
         return cell;
     }else if ([list.type isEqualToString:@"gif"]){
-        BSGifCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BSGifCell" forIndexPath:indexPath];
+        BSGifCell *cell = (BSGifCell *)[tableView dequeueReusableCellWithIdentifier:@"BSGifCell"];
+        if (cell == nil) {
+            cell= (BSGifCell *)[[[NSBundle  mainBundle]  loadNibNamed:@"BSGifCell" owner:self options:nil] lastObject];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
         cell.list = list;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if ([list.type isEqualToString:@"video"]){
-        __weak VideoCell *cell = (VideoCell *)[[[NSBundle mainBundle] loadNibNamed:@"VideoCell" owner:self options:nil] lastObject];
+       __weak VideoCell *cell = (VideoCell *)[tableView dequeueReusableCellWithIdentifier:@"VideoCell"];
+        if (cell == nil) {
+            cell= (VideoCell *)[[[NSBundle  mainBundle]  loadNibNamed:@"VideoCell" owner:self options:nil] lastObject];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.list = list;
         cell.clickPlayButtonBlock = ^{
@@ -205,10 +218,6 @@
         _mainTableView.tableFooterView = [UIView new];
         _mainTableView.rowHeight = UITableViewAutomaticDimension; // 自适
         _mainTableView.estimatedRowHeight = 50; //先估计一个高度
-        [_mainTableView registerNib:[UINib nibWithNibName:@"BSTextCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"identifier"];
-        [_mainTableView registerNib:[UINib nibWithNibName:@"VideoCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"VideoCell"];
-        [_mainTableView registerNib:[UINib nibWithNibName:@"BSImageCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BSImageCell"];
-        [_mainTableView registerNib:[UINib nibWithNibName:@"BSGifCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BSGifCell"];
     }
     return _mainTableView;
 }

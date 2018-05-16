@@ -14,6 +14,8 @@
 #import "BSImageCell.h"
 #import "BSGifCell.h"
 
+#import "BSVideoCell.h"
+
 #import <ZFPlayer.h>
 #import <ZFPlayerView.h>
 
@@ -128,6 +130,13 @@
         cell.list = list;
         return cell;
     }else if ([list.type isEqualToString:@"video"]){
+//        BSVideoCell *cell = (BSVideoCell *)[tableView dequeueReusableCellWithIdentifier:@"BSVideoCell"];
+//        if (cell == nil) {
+//            cell= (BSVideoCell *)[[[NSBundle  mainBundle]  loadNibNamed:@"BSVideoCell" owner:self options:nil] lastObject];
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        }
+//        cell.list = list;
+//        return cell;
        __weak VideoCell *cell = (VideoCell *)[tableView dequeueReusableCellWithIdentifier:@"VideoCell"];
         if (cell == nil) {
             cell= (VideoCell *)[[[NSBundle  mainBundle]  loadNibNamed:@"VideoCell" owner:self options:nil] lastObject];
@@ -139,16 +148,16 @@
             [cell.playButton removeFromSuperview];
             ZFPlayerModel *playerModel = [[ZFPlayerModel alloc] init];
             playerModel.title            = list.text;
-            
+
             BS_Video *video = list.video;
             playerModel.videoURL         = [NSURL URLWithString:[video.video firstObject]];
             playerModel.placeholderImageURLString = [video.thumbnail firstObject];
             playerModel.scrollView       = tableView;
             playerModel.indexPath        = indexPath;
-            
+
             // player的父视图tag
             playerModel.fatherViewTag    = cell.bgImageView.tag;
-            
+
             // 设置播放控制层和model
             [self.playerView playerControlView:self.controlView playerModel:playerModel];
             // 下载功能

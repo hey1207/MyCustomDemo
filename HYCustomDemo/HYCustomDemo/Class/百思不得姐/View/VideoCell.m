@@ -26,7 +26,7 @@
     self.imageHeight.constant = (CGFloat)video.height/video.width * Main_Screen_Width;
     [self layoutIfNeeded];
     
-    [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:[video.thumbnail firstObject]]];
+    [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:[video.thumbnail firstObject]] placeholderImage:[UIImage imageNamed:@"placeHolder"]];
 }
 
 - (IBAction)playButtonAction:(id)sender {

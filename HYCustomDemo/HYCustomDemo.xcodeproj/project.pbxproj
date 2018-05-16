@@ -67,6 +67,8 @@
 		04A43EEC1F307AC0000DBC7F /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43EEB1F307AC0000DBC7F /* NewsCell.m */; };
 		04A43EEF1F307BC8000DBC7F /* NewsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43EEE1F307BC8000DBC7F /* NewsTableView.m */; };
 		04A43EF21F307EE5000DBC7F /* NewsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A43EF11F307EE5000DBC7F /* NewsPageViewController.m */; };
+		04AAA5CD2064EF6600092F72 /* BSVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAA5CB2064EF6600092F72 /* BSVideoCell.m */; };
+		04AAA5CE2064EF6600092F72 /* BSVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AAA5CC2064EF6600092F72 /* BSVideoCell.xib */; };
 		04B4AE86202C3095007BCD9F /* MyPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4AE85202C3095007BCD9F /* MyPictureCell.m */; };
 		04B4AE8C202C4692007BCD9F /* RCDraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4AE8B202C4691007BCD9F /* RCDraggableButton.m */; };
 		04B4AE90202D371C007BCD9F /* SecneryDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4AE8E202D371C007BCD9F /* SecneryDetailCell.m */; };
@@ -224,6 +226,9 @@
 		04A43EEE1F307BC8000DBC7F /* NewsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableView.m; sourceTree = "<group>"; };
 		04A43EF01F307EE5000DBC7F /* NewsPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsPageViewController.h; sourceTree = "<group>"; };
 		04A43EF11F307EE5000DBC7F /* NewsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsPageViewController.m; sourceTree = "<group>"; };
+		04AAA5CA2064EF6600092F72 /* BSVideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSVideoCell.h; sourceTree = "<group>"; };
+		04AAA5CB2064EF6600092F72 /* BSVideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSVideoCell.m; sourceTree = "<group>"; };
+		04AAA5CC2064EF6600092F72 /* BSVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BSVideoCell.xib; sourceTree = "<group>"; };
 		04B4AE84202C3095007BCD9F /* MyPictureCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPictureCell.h; sourceTree = "<group>"; };
 		04B4AE85202C3095007BCD9F /* MyPictureCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPictureCell.m; sourceTree = "<group>"; };
 		04B4AE8A202C4691007BCD9F /* RCDraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDraggableButton.h; sourceTree = "<group>"; };
@@ -577,6 +582,9 @@
 				04BD79C5206100B4004917BE /* BSGifCell.h */,
 				04BD79C6206100B4004917BE /* BSGifCell.m */,
 				04BD79C7206100B4004917BE /* BSGifCell.xib */,
+				04AAA5CA2064EF6600092F72 /* BSVideoCell.h */,
+				04AAA5CB2064EF6600092F72 /* BSVideoCell.m */,
+				04AAA5CC2064EF6600092F72 /* BSVideoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -936,6 +944,7 @@
 				049DE36E205A59A20061B13D /* SingleView.xib in Resources */,
 				0446CB351F2CD37900B781CF /* Main.storyboard in Resources */,
 				041A476A20240B2400FB0EE7 /* HospitalCell.xib in Resources */,
+				04AAA5CE2064EF6600092F72 /* BSVideoCell.xib in Resources */,
 				04A32AD6205E40D800E7FB62 /* BSTextCell.xib in Resources */,
 				041A476D20240B2400FB0EE7 /* HosDetailCell.xib in Resources */,
 				04BD79C9206100B4004917BE /* BSGifCell.xib in Resources */,
@@ -1054,6 +1063,7 @@
 				041A476520240B2400FB0EE7 /* LZPickerModel.m in Sources */,
 				04D8AC4D2029890800401EF7 /* RootViewController.m in Sources */,
 				04D8AC55202991FB00401EF7 /* HYButton.m in Sources */,
+				04AAA5CD2064EF6600092F72 /* BSVideoCell.m in Sources */,
 				049DE378205B67EA0061B13D /* UIScrollView+HYRefresh.m in Sources */,
 				04A32AC4205D523700E7FB62 /* BSRecViewController.m in Sources */,
 				04A32ACD205D52C400E7FB62 /* BSTextViewController.m in Sources */,

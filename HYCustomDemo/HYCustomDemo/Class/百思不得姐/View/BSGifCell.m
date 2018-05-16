@@ -31,7 +31,7 @@
     self.imageHeight.constant = (CGFloat)gif.height/gif.width*(Main_Screen_Width-20);
     [self layoutIfNeeded];
     
-    [self.gifImageView sd_setImageWithURL:[NSURL URLWithString:gif.gif_thumbnail.firstObject]];
+    [self.gifImageView sd_setImageWithURL:[NSURL URLWithString:gif.gif_thumbnail.firstObject] placeholderImage:[UIImage imageNamed:@"placeHolder"]];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGifView:)];
     [self.gifImageView addGestureRecognizer:tap];

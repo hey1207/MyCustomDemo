@@ -36,7 +36,7 @@
         self.bottomImageView.contentMode = UIViewContentModeTop;
         self.bottomImageView.clipsToBounds = YES;
         
-        [self.bottomImageView sd_setImageWithURL:[NSURL URLWithString:bsImage.big.firstObject] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        [self.bottomImageView sd_setImageWithURL:[NSURL URLWithString:bsImage.big.firstObject] placeholderImage:[UIImage imageNamed:@"placeHolder"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             //第二步
             CGFloat imageH = bsImage.width > 0 && bsImage.height > 0 ? Main_Screen_Width * bsImage.height/bsImage.width : 300;
             UIGraphicsBeginImageContextWithOptions(CGSizeMake(Main_Screen_Width, Main_Screen_Height),0, [UIScreen mainScreen].scale);

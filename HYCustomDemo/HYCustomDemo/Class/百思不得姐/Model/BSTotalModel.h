@@ -34,6 +34,7 @@
 @property (nonatomic,strong) NSArray *download;
 @property (nonatomic,strong) NSArray *thumbnail_small;
 @property (nonatomic,strong) NSArray *video;
+@property (nonatomic,assign) BOOL videoPlaying;
 @end
 
 @interface BS_U : NSObject
